@@ -14,7 +14,18 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.documentElement.dataset.theme = "light";
+      }
+    } catch {
+      document.documentElement.dataset.theme = "dark";
+    }
+  </script>
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -25,6 +36,10 @@
       <a href="#research">Research</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true"></span>
+      <span class="theme-toggle-text">Light</span>
+    </button>
   </header>
 
   <main id="top">
