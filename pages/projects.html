@@ -146,6 +146,7 @@
             Developed as part of a capstone project for the MiLA Autonomous Driving Lab at OU.
             Source repository is private.
           </span>
+        </div>
       </article>
 
       <article class="detail-card">
@@ -164,6 +165,70 @@
           real-world implementation decisions, particularly surrounding trust establishment,
           authentication, secure communication channels, and protocol behavior under practical constraints.
         </p>
+
+        <div class="project-media-grid" aria-label="Secure peer-to-peer messaging screenshots">
+          <a href="../assets/images/loginpreview.png" target="_blank" rel="noopener noreferrer" class="media-preview">
+            <img src="../assets/images/loginpreview.png" alt="Login window for the secure peer-to-peer messaging tool" />
+            <span>Connection setup</span>
+          </a>
+          <a href="../assets/images/messagepreview.png" target="_blank" rel="noopener noreferrer" class="media-preview">
+            <img src="../assets/images/messagepreview.png"
+              alt="Chat window showing plaintext and encrypted message views" />
+            <span>Encrypted messaging view</span>
+          </a>
+        </div>
+
+        <div class="protocol-panel">
+          <div class="protocol-panel-header">
+            <h3>Protocol pseudocode</h3>
+            <a href="../assets/docs/pseudocode.html" target="_blank" rel="noopener noreferrer">Open full pseudocode</a>
+          </div>
+          <pre><code>START SECURE CHAT SESSION
+
+Peer A and Peer B each generate encryption and signing key pairs.
+Each peer signs its own encryption public key.
+Each peer sends the other its encryption public key, signature, and signing public key.
+
+VERIFY PEER IDENTITY
+
+On receipt of peer key material:
+  peer_encryption_public_key = received encryption public key
+  peer_signature = received signature
+  peer_signing_public_key = received signing public key
+
+Verify the peer signature over the received encryption public key.
+If verification fails, terminate the connection.
+If verification succeeds, continue secure setup.
+
+DERIVE SHARED SECRET
+
+Each peer combines its encryption private key with the peer encryption public key.
+Both peers independently derive the same shared secret without sending it directly.
+
+SEND ENCRYPTED MESSAGE
+
+When the user sends a message:
+  plaintext = user input
+  nonce = GenerateRandomNonce()
+  ciphertext = Encrypt(shared_secret, nonce, plaintext)
+  packet = MessageType || MessageLength || ciphertext
+  send packet over socket
+
+RECEIVE ENCRYPTED MESSAGE
+
+When a packet is received:
+  read message type
+  read message length
+  read ciphertext bytes
+  plaintext = Decrypt(shared_secret, ciphertext)
+  display plaintext and ciphertext separately
+
+SECURITY PROPERTIES DEMONSTRATED
+
+The shared secret is never transmitted directly.
+Fresh nonces prevent identical messages from producing identical ciphertext.
+Signed public keys help prevent unauthorized key substitution.</code></pre>
+        </div>
 
         <div class="project-links">
           <span class="project-note">
