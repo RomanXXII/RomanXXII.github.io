@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Selected AI security, cybersecurity engineering, binary analysis, annotation pipeline, and autonomous systems projects by Roman Beames." />
+  <title>Projects | Roman Beames</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.documentElement.dataset.theme = "light";
+      }
+    } catch {
+      document.documentElement.dataset.theme = "dark";
+    }
+  </script>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/script.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Roman Beames home">RB</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="../index.html">About</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="research.html">Research</a>
+      <a href="beyond.html">Beyond</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true"></span>
+      <span class="theme-toggle-text">Light</span>
+    </button>
+  </header>
+
+  <main class="detail-page">
+    <section class="section-wrap page-hero">
+      <p class="eyebrow">Projects</p>
+      <h1>Research and engineering work</h1>
+      <p class="lead">
+        Selected work across AI security, secure systems, autonomous-system research,
+        and applied cybersecurity engineering.
+      </p>
+    </section>
+
+    <section class="section-wrap detail-list">
+      <article class="detail-card">
+        <p class="section-kicker">AI + Binary Analysis</p>
+        <h2>LLM-Based Binary Similarity Research</h2>
+        <p>
+          Explored cybersecurity applications for large language models by investigating whether
+          they could identify meaningful similarity and potentially malicious behavioral patterns
+          within lifted binary code represented as High-Level Intermediate Language (HLIL)
+          generated through Binary Ninja.
+        </p>
+        <ul class="tag-list">
+          <li>Cross-architecture analysis</li>
+          <li>Optimization-level comparisons</li>
+          <li>Prompt engineering</li>
+          <li>Nondeterminism studies</li>
+        </ul>
+        <p>
+          The project was motivated by modern cybersecurity challenges surrounding generated and
+          obfuscated malicious code. As attackers gain increasing access to AI-assisted tooling,
+          malicious behavior can often be disguised beneath structurally different implementations,
+          making low-level manual analysis increasingly difficult and time-intensive for human analysts.
+        </p>
+
+        <p>
+          Using Python-based analysis pipelines, I developed a block-comparison workflow that divided
+          HLIL files into manageable sections and compared them through repeated LLM similarity scoring.
+          Earlier stages of the project experimented with whole-file comparisons and normalization
+          pipelines before transitioning toward pairwise block analysis to better manage model context
+          limitations and improve scoring consistency.
+        </p>
+
+        <p>
+          Testing included binaries compiled across multiple architectures and optimization levels,
+          including ARM and x86 targets alongside O2 and O3 compiler optimizations, in order to evaluate
+          whether meaningful behavioral alignment could still be detected despite significant structural
+          and compiler-driven changes in the resulting binaries.
+        </p>
+
+        <p>
+          Multiple model architectures were explored throughout development, including
+          <code>gpt-oss:20b</code>, <code>llama3.3:70b</code>, and
+          <code>gpt-oss:120b</code>. Supporting Python scripts generated similarity matrices,
+          heatmaps, diagonal alignment statistics, and deterministic scoring metrics to analyze
+          model consistency, context sensitivity, and nondeterministic behavior across repeated runs.
+        </p>
+        <div class="project-links">
+          <span class="project-note">
+            Developed as part of research conducted through OU SecretLab. Source repository is private.
+          </span>
+        </div>
+      </article>
+
+      <article class="detail-card">
+        <p class="section-kicker">Autonomous Systems + Infrastructure</p>
+        <h2>Autonomous Driving Data & Annotation Platform</h2>
+        <p>
+          Contributed to a containerized data and annotation pipeline designed for autonomous-driving
+          computer vision workflows using OpenPilot and CVAT-based labeling infrastructure.
+        </p>
+        <p>
+          The platform was designed to ingest, process, manage, and annotate driving data for
+          future machine learning and human-review workflows. The system integrated CVAT labeling,
+          artifact storage, route downloading, dataset export workflows, and distributed worker
+          infrastructure within a unified containerized environment.
+        </p>
+
+        <p>
+          My work focused heavily on the CVAT integration layer, including running and configuring
+          CVAT containers, interacting with the CVAT API through Python automation scripts, creating
+          task-batching workflows, exporting annotations as COCO JSON, and testing annotation
+          pipelines against live CVAT deployments. I also worked with model-assisted labeling
+          workflows using HuggingFace object-detection models including RT-DETRv2.
+        </p>
+
+        <p>
+          The annotation pipeline followed a human-in-the-loop workflow: upload image batches into
+          CVAT tasks, run automated annotation passes, route annotations through human review, export
+          structured labels, and support future retraining workflows for autonomous-driving models.
+          The project explored how automation and human validation could be combined to improve
+          annotation scalability and dataset generation efficiency for autonomous-driving research.
+        </p>
+
+        <p>
+          The broader system architecture used Docker Compose orchestration alongside FastAPI,
+          React, PostgreSQL, MinIO object storage, and asynchronous worker containers responsible
+          for downloading, processing, exporting, and managing OpenPilot driving-route data.
+        </p>
+        <div class="project-links">
+          <a href="../assets/docs/mila_capstone_poster.pdf" target="_blank" rel="noopener noreferrer"
+            class="button secondary">
+            View Capstone Poster
+          </a>
+          <span class="project-note">
+            Developed as part of a capstone project for the MiLA Autonomous Driving Lab at OU.
+            Source repository is private.
+          </span>
+      </article>
+
+      <article class="detail-card">
+        <p class="section-kicker">Applied Security</p>
+        <h2>Secure Peer-to-Peer Messaging Tool</h2>
+        <p>
+          The final implementation used PyNaCl Box encryption to establish shared secrets through
+          elliptic-curve Diffie-Hellman-style exchange while verifying peer authenticity through
+          signed public keys. Additional work included encrypted message transport, nonce handling,
+          socket communication management, GUI development with Tkinter, and plaintext-versus-ciphertext
+          visualization for debugging and educational analysis.
+        </p>
+
+        <p>
+          The project strengthened my understanding of how cryptographic concepts translate into
+          real-world implementation decisions, particularly surrounding trust establishment,
+          authentication, secure communication channels, and protocol behavior under practical constraints.
+        </p>
+
+        <div class="project-links">
+          <span class="project-note">
+            Repository remains private to preserve academic integrity for future coursework submissions.
+          </span>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+
+</html>

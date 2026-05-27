@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="A personal side of Roman Beames: leadership, service, music, and creative media work beyond technical research."
+  />
+  <title>Beyond the Lab | Roman Beames</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.documentElement.dataset.theme = "light";
+      }
+    } catch {
+      document.documentElement.dataset.theme = "dark";
+    }
+  </script>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Roman Beames home">RB</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="../index.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="research.html">Research</a>
+      <a href="beyond.html" aria-current="page">Beyond</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true"></span>
+      <span class="theme-toggle-text">Light</span>
+    </button>
+  </header>
+
+  <main class="detail-page">
+    <section class="section-wrap page-hero">
+      <p class="eyebrow">Leadership &middot; Service &middot; Creative Media</p>
+      <h1>Beyond the Lab</h1>
+      <p class="lead">
+        A more personal look at the communities, creative work, and leadership experiences
+        that shaped how I work with people.
+      </p>
+    </section>
+
+    <section class="section-wrap story-layout" aria-label="Beyond the lab story">
+      <aside class="photo-stack" aria-label="Photo highlights">
+        <figure class="stack-photo">
+          <!-- Replace the placeholder with:
+          <img src="../assets/images/your-band-photo.jpg" alt="Brief description of the photo" />
+          -->
+          <div class="photo-placeholder">Pride photo</div>
+          <figcaption>Pride of Oklahoma</figcaption>
+        </figure>
+
+        <figure class="stack-photo">
+          <!-- Replace the placeholder with:
+          <img src="../assets/images/your-kky-photo.jpg" alt="Brief description of the photo" />
+          -->
+          <div class="photo-placeholder">Kappa Kappa Psi photo</div>
+          <figcaption>Service and leadership</figcaption>
+        </figure>
+
+        <figure class="stack-photo">
+          <!-- Replace the placeholder with:
+          <img src="../assets/images/your-media-photo.jpg" alt="Brief description of the photo" />
+          -->
+          <div class="photo-placeholder">Media work</div>
+          <figcaption>Graphics and communication</figcaption>
+        </figure>
+      </aside>
+
+      <div class="story-content">
+        <article class="story-block">
+          <p class="section-kicker">Pride of Oklahoma</p>
+          <h2>Music, discipline, and shared standards</h2>
+          <p>
+            I would use this paragraph to describe what being part of the Pride taught me:
+            showing up prepared, trusting the people around me, learning to improve quickly,
+            and contributing to a group where individual effort affects the whole ensemble.
+          </p>
+          <p>
+            A strong version of this section could include a specific memory, responsibility,
+            performance moment, or lesson that connects back to how you approach research and
+            engineering work.
+          </p>
+        </article>
+
+        <article class="story-block">
+          <p class="section-kicker">Kappa Kappa Psi</p>
+          <h2>Service, mentorship, and leadership</h2>
+          <p>
+            I would frame this around service and responsibility rather than just membership.
+            Talk about how you supported the band community, worked with other leaders, helped
+            younger members, or learned to make decisions with other people depending on you.
+          </p>
+          <p>
+            This is a good place for one concrete example: organizing an event, supporting a
+            project, helping with logistics, mentoring, or learning how to lead without making
+            yourself the center of the story.
+          </p>
+        </article>
+
+        <article class="story-block">
+          <p class="section-kicker">Visual Media</p>
+          <h2>Designing for real audiences</h2>
+          <p>
+            I would keep this short and practical: mention Photoshop, graphics, social/media
+            assets, or visual communication work for the Pride of Oklahoma, then connect it to
+            clear communication, taste, iteration, and attention to detail.
+          </p>
+          <p>
+            If you have examples you are comfortable showing, this section can eventually link
+            to a small media gallery or a few selected pieces.
+          </p>
+        </article>
+
+        <div class="story-return">
+          <a class="button secondary" href="../index.html#beyond">Back to portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

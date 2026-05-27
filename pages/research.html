@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Research interests for Roman Beames, including AI security, binary analysis, secure autonomous systems, and critical infrastructure security."
+  />
+  <title>Research | Roman Beames</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.documentElement.dataset.theme = "light";
+      }
+    } catch {
+      document.documentElement.dataset.theme = "dark";
+    }
+  </script>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Roman Beames home">RB</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="../index.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="beyond.html">Beyond</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true"></span>
+      <span class="theme-toggle-text">Light</span>
+    </button>
+  </header>
+
+  <main class="detail-page">
+    <section class="section-wrap page-hero">
+      <p class="eyebrow">Research</p>
+      <h1>Security questions across AI, software, and autonomous systems.</h1>
+      <p class="lead">
+        These are the areas I am most interested in developing through graduate study,
+        research, and engineering work.
+      </p>
+    </section>
+
+    <section class="section-wrap detail-grid">
+      <article class="detail-card">
+        <p class="section-kicker">AI Security</p>
+        <h2>Model behavior under pressure</h2>
+        <p>
+          I am interested in how AI systems behave when inputs are ambiguous, adversarial,
+          or safety-critical. Add your own language here about evaluation, robustness,
+          prompt sensitivity, nondeterminism, or secure deployment.
+        </p>
+      </article>
+
+      <article class="detail-card">
+        <p class="section-kicker">Binary Analysis</p>
+        <h2>Representing and comparing compiled programs</h2>
+        <p>
+          Binary similarity connects reverse engineering, program analysis, and machine
+          learning evaluation. Add detail here about HLIL, Binary Ninja, cross-architecture
+          comparison, and optimization-level effects.
+        </p>
+      </article>
+
+      <article class="detail-card">
+        <p class="section-kicker">Secure Autonomy</p>
+        <h2>Robust systems in simulated and real environments</h2>
+        <p>
+          Autonomous systems combine perception, control, learning, and infrastructure.
+          Add thoughts here about CARLA, reinforcement learning, robustness testing,
+          and security for autonomous decision-making.
+        </p>
+      </article>
+
+      <article class="detail-card">
+        <p class="section-kicker">Critical Infrastructure</p>
+        <h2>Security for systems people depend on</h2>
+        <p>
+          Use this section to connect your cybersecurity engineering interests to secure
+          infrastructure, reliability, operational constraints, and high-consequence systems.
+        </p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

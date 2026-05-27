@@ -163,6 +163,11 @@ img {
   background: var(--hover-bg);
 }
 
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+  background: var(--hover-bg);
+}
+
 .theme-toggle {
   display: inline-flex;
   min-height: 40px;
@@ -403,6 +408,10 @@ h3 {
   color: var(--muted);
 }
 
+.section-action {
+  margin-top: 24px;
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -557,6 +566,41 @@ h3 {
   padding-top: 8px;
 }
 
+.detail-grid,
+.detail-list {
+  display: grid;
+  gap: 18px;
+  padding: 24px 0 80px;
+}
+
+.detail-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.detail-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  background: var(--surface-bg);
+}
+
+.detail-card h2 {
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+}
+
+.detail-card p {
+  color: var(--muted);
+}
+
+.detail-card p:last-child,
+.detail-card .tag-list:last-child {
+  margin-bottom: 0;
+}
+
+.contact-page-panel {
+  padding: 24px 0 80px;
+}
+
 .site-footer {
   align-items: start;
   grid-template-columns: minmax(260px, 0.68fr) minmax(0, 1fr);
@@ -645,7 +689,8 @@ h3 {
   }
 
   .project-grid,
-  .interest-grid {
+  .interest-grid,
+  .detail-grid {
     grid-template-columns: 1fr;
   }
 

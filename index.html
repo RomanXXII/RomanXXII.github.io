@@ -24,18 +24,18 @@
       document.documentElement.dataset.theme = "dark";
     }
   </script>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/script.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Roman Beames home">RB</a>
+    <a class="brand" href="index.html" aria-label="Roman Beames home">RB</a>
     <nav class="site-nav" aria-label="Primary navigation">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#research">Research</a>
-      <a href="#beyond">Beyond</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">About</a>
+      <a href="pages/projects.html">Projects</a>
+      <a href="pages/research.html">Research</a>
+      <a href="pages/beyond.html">Beyond</a>
+      <a href="pages/contact.html">Contact</a>
     </nav>
     <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
       <span class="theme-toggle-icon" aria-hidden="true"></span>
@@ -46,38 +46,38 @@
   <main id="top">
     <section class="hero section-wrap">
       <div class="hero-copy">
-        <p class="eyebrow">AI Security &middot; Cybersecurity Engineering &middot; Binary Analysis</p>
+        <p class="eyebrow">AI Security &middot; Cybersecurity Engineering &middot; Resilient Infrastructure</p>
         <h1>Roman Beames</h1>
         <p class="lead">
-          Research-oriented computer scientist focused on secure AI systems, reverse engineering,
-          autonomous systems, and infrastructure security.
+          Research-oriented computer scientist interested in securing intelligent systems, understanding how 
+          complex software behaves, and building resilient infrastructure for emerging technologies.
         </p>
         <div class="hero-actions" aria-label="Primary links">
-          <a class="button primary" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a class="button primary" href="assets/docs/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           <a class="button secondary" href="https://github.com/RomanXXII" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a class="button secondary" href="#contact">Contact</a>
+          <a class="button secondary" href="pages/contact.html">Contact</a>
         </div>
       </div>
 
       <figure class="hero-visual" aria-label="Roman Beames portrait">
-        <img src="assets/RBselfportrait.png" alt="" />
+        <img src="assets/images/RBselfportrait.png" alt="" />
       </figure>
     </section>
 
     <section class="section-wrap split" id="about">
       <div>
         <p class="section-kicker">About</p>
-        <h2>Building at the intersection of AI, security, and engineered systems.</h2>
+        <h2>Building at the intersection of AI and cybersecurity.</h2>
       </div>
       <div class="body-copy">
         <p>
-          I graduated summa cum laude with a B.S. in Computer Science from the University of
-          Oklahoma and am an incoming M.S. Cybersecurity Engineering student at Auburn University.
+          I recently graduated <i>summa cum laude</i> with a B.S. in Computer Science from the University of
+          Oklahoma. This fall, I'll be attending Auburn University to pursue an M.S. in Cybersecurity Engineering. War Eagle!
         </p>
         <p>
-          My work centers on technical depth: evaluating machine learning systems, studying binary
-          similarity through intermediate representations, building secure communication prototypes,
-          and experimenting with autonomous-system robustness.
+            My work explores how intelligent systems can be evaluated, secured, and deployed safely within complex technical 
+            environments, with interests spanning machine learning security, autonomous systems, and resilient cyber infrastructure. 
+            I am especially interested in the challenges that emerge as these systems become increasingly embedded in everyday life.
         </p>
       </div>
     </section>
@@ -142,24 +142,9 @@
             <li>Integrity checks</li>
           </ul>
         </article>
-
-        <article class="project-card">
-          <div class="project-meta">
-            <span>Simulation</span>
-            <span>Secure Autonomy</span>
-          </div>
-          <h3>CARLA Reinforcement Learning / Autonomous Systems Work</h3>
-          <p>
-            Explored reinforcement learning in CARLA with emphasis on reward design, robustness
-            testing, and autonomous driving simulation.
-          </p>
-          <ul class="tag-list" aria-label="Project focus areas">
-            <li>CARLA</li>
-            <li>Reward design</li>
-            <li>Robustness testing</li>
-            <li>Simulation research</li>
-          </ul>
-        </article>
+      </div>
+      <div class="section-action">
+        <a class="button secondary" href="pages/projects.html">View project details</a>
       </div>
     </section>
 
@@ -172,11 +157,12 @@
         <span>AI security</span>
         <span>Cybersecurity engineering</span>
         <span>Reverse engineering</span>
-        <span>Binary analysis</span>
         <span>Secure autonomous systems</span>
         <span>Critical infrastructure security</span>
         <span>Machine learning systems</span>
-        <span>Secure infrastructure</span>
+      </div>
+      <div class="section-action">
+        <a class="button secondary" href="pages/research.html">Explore research interests</a>
       </div>
     </section>
 
@@ -187,28 +173,16 @@
       </div>
       <div class="beyond-overview">
         <p>
-          Outside of technical research, I have spent much of my time in collaborative
-          organizations where preparation, trust, creativity, and communication matter.
+          Outside of technical research, I have spent much of my time in
+          organizations that have defined my skills in preparation, trust, creativity, and communication.
         </p>
         <div class="mini-tags" aria-label="Beyond the lab focus areas">
           <span>Pride of Oklahoma</span>
           <span>Kappa Kappa Psi</span>
           <span>Visual media</span>
         </div>
-        <a class="button secondary" href="beyond.html">Read more</a>
+        <a class="button secondary" href="pages/beyond.html">Read more</a>
       </div>
-    </section>
-
-    <section class="section-wrap notes-section">
-      <div>
-        <p class="section-kicker">Next</p>
-        <h2>Research notes and writing</h2>
-      </div>
-      <p class="body-copy">
-        This site is structured so a future research notes or blog section can be added without
-        changing the core layout. Good first topics would be binary similarity evaluation design,
-        autonomous-system robustness testing, and practical AI security experiments.
-      </p>
     </section>
   </main>
 
@@ -216,10 +190,6 @@
     <div class="contact-copy">
       <p class="section-kicker">Contact</p>
       <h2>Let's connect.</h2>
-      <p>
-        Open to research, graduate, and engineering conversations in AI security,
-        cybersecurity engineering, binary analysis, and secure autonomous systems.
-      </p>
     </div>
     <div class="contact-panel" aria-label="Contact links">
       <a href="mailto:romanbeames@gmail.com" target="_blank" rel="noopener noreferrer">
@@ -238,7 +208,7 @@
         <span>LinkedIn</span>
         <strong>romanbeames</strong>
       </a>
-      <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">
+      <a href="assets/docs/resume.pdf" target="_blank" rel="noopener noreferrer">
         <span>Resume</span>
         <strong>PDF</strong>
       </a>
