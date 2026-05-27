@@ -3,59 +3,189 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roman Beames</title>
+  <meta
+    name="description"
+    content="Roman Beames is an AI and cybersecurity research engineer focused on AI security, binary analysis, autonomous systems, and secure infrastructure."
+  />
+  <title>Roman Beames | AI + Cybersecurity Research Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main>
-    <section class="hero">
-      <h1>Roman Beames</h1>
-      <p class="subtitle">Computer Science student interested in AI, cybersecurity, and secure systems.</p>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Roman Beames home">RB</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-      <div class="links">
-        <a href="resume.pdf">Resume</a>
-        <a href="https://github.com/RomanXXII">GitHub</a>
-        <a href="#">LinkedIn</a>
+  <main id="top">
+    <section class="hero section-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">AI Security &middot; Cybersecurity Engineering &middot; Binary Analysis</p>
+        <h1>Roman Beames</h1>
+        <p class="lead">
+          Research-oriented computer scientist focused on secure AI systems, reverse engineering,
+          autonomous systems, and infrastructure security.
+        </p>
+        <div class="hero-actions" aria-label="Primary links">
+          <a class="button primary" href="resume.pdf">Resume</a>
+          <a class="button secondary" href="https://github.com/RomanXXII">GitHub</a>
+          <a class="button secondary" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <figure class="hero-visual" aria-label="Abstract research systems visual">
+        <img src="assets/research-systems-hero.png" alt="" />
+      </figure>
+    </section>
+
+    <section class="section-wrap split" id="about">
+      <div>
+        <p class="section-kicker">About</p>
+        <h2>Building at the intersection of AI, security, and engineered systems.</h2>
+      </div>
+      <div class="body-copy">
+        <p>
+          I graduated summa cum laude with a B.S. in Computer Science from the University of
+          Oklahoma and am an incoming M.S. Cybersecurity Engineering student at Auburn University.
+        </p>
+        <p>
+          My work centers on technical depth: evaluating machine learning systems, studying binary
+          similarity through intermediate representations, building secure communication prototypes,
+          and experimenting with autonomous-system robustness.
+        </p>
       </div>
     </section>
 
-    <section>
-      <h2>About</h2>
-      <p>
-        I am a Computer Science student at the University of Oklahoma and an incoming
-        M.S. Cybersecurity Engineering student at Auburn University. My interests include
-        AI security, binary analysis, autonomous systems, and cyber defense.
+    <section class="section-wrap" id="projects">
+      <div class="section-heading">
+        <p class="section-kicker">Selected Work</p>
+        <h2>Research and engineering projects</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-meta">
+            <span>Research</span>
+            <span>AI + Binary Analysis</span>
+          </div>
+          <h3>LLM-Based Binary Similarity Research</h3>
+          <p>
+            Investigating whether large language models can evaluate similarity between binaries
+            using HLIL generated from Binary Ninja.
+          </p>
+          <ul class="tag-list" aria-label="Project focus areas">
+            <li>Cross-architecture analysis</li>
+            <li>Optimization comparisons</li>
+            <li>Prompt engineering</li>
+            <li>Nondeterminism studies</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-meta">
+            <span>Infrastructure</span>
+            <span>Autonomous Driving Data</span>
+          </div>
+          <h3>CVAT Autonomous Driving Annotation Pipeline</h3>
+          <p>
+            Built a Docker-based CVAT annotation pipeline with model-assisted labeling workflows
+            for autonomous driving datasets.
+          </p>
+          <ul class="tag-list" aria-label="Project focus areas">
+            <li>CVAT</li>
+            <li>Docker</li>
+            <li>HuggingFace models</li>
+            <li>COCO exports</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-meta">
+            <span>Security</span>
+            <span>Applied Cryptography</span>
+          </div>
+          <h3>Secure Peer-to-Peer Messaging Tool</h3>
+          <p>
+            Developed a Python secure messaging prototype using encryption, key exchange, and
+            authentication and integrity concepts.
+          </p>
+          <ul class="tag-list" aria-label="Project focus areas">
+            <li>Python</li>
+            <li>AES encryption</li>
+            <li>Diffie-Hellman</li>
+            <li>Integrity checks</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="project-meta">
+            <span>Simulation</span>
+            <span>Secure Autonomy</span>
+          </div>
+          <h3>CARLA Reinforcement Learning / Autonomous Systems Work</h3>
+          <p>
+            Explored reinforcement learning in CARLA with emphasis on reward design, robustness
+            testing, and autonomous driving simulation.
+          </p>
+          <ul class="tag-list" aria-label="Project focus areas">
+            <li>CARLA</li>
+            <li>Reward design</li>
+            <li>Robustness testing</li>
+            <li>Simulation research</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-wrap research-band" id="research">
+      <div class="section-heading">
+        <p class="section-kicker">Research Interests</p>
+        <h2>Problems I am drawn toward</h2>
+      </div>
+      <div class="interest-grid">
+        <span>AI security</span>
+        <span>Cybersecurity engineering</span>
+        <span>Reverse engineering</span>
+        <span>Binary analysis</span>
+        <span>Secure autonomous systems</span>
+        <span>Critical infrastructure security</span>
+        <span>Machine learning systems</span>
+        <span>Secure infrastructure</span>
+      </div>
+    </section>
+
+    <section class="section-wrap notes-section">
+      <div>
+        <p class="section-kicker">Next</p>
+        <h2>Research notes and writing</h2>
+      </div>
+      <p class="body-copy">
+        This site is structured so a future research notes or blog section can be added without
+        changing the core layout. Good first topics would be binary similarity evaluation design,
+        autonomous-system robustness testing, and practical AI security experiments.
       </p>
     </section>
-
-    <section>
-      <h2>Projects</h2>
-
-      <div class="project">
-        <h3>LLM-Based Binary Similarity Research</h3>
-        <p>
-          Investigating whether large language models can evaluate similarity between
-          compiled binaries using High-Level Intermediate Language generated through
-          Binary Ninja.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>CVAT Autonomous Driving Annotation Pipeline</h3>
-        <p>
-          Built a data annotation pipeline using CVAT, Docker, model-assisted labeling,
-          and exported annotations for autonomous driving datasets.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>Secure Peer-to-Peer Messaging Tool</h3>
-        <p>
-          Developed a secure messaging prototype using encryption, key exchange, and
-          authentication concepts.
-        </p>
-      </div>
-    </section>
   </main>
+
+  <footer class="site-footer section-wrap" id="contact">
+    <div>
+      <p class="section-kicker">Contact</p>
+      <h2>Open to research, graduate, and engineering conversations.</h2>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/RomanXXII">GitHub</a>
+      <a href="resume.pdf">Resume</a>
+    </div>
+  </footer>
 </body>
 </html>
