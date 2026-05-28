@@ -641,6 +641,14 @@ h3 {
   object-fit: contain;
 }
 
+.research-media-grid .media-preview-wide {
+  grid-column: 1 / -1;
+}
+
+.research-media-grid .media-preview-wide img {
+  aspect-ratio: 21 / 7;
+}
+
 .media-preview span {
   display: block;
   padding: 10px 12px;
