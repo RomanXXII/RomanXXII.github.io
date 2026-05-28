@@ -497,7 +497,7 @@ h3 {
   margin: 0;
 }
 
-.stack-photo:nth-child(2) {
+.stack-photo:nth-child(even) {
   justify-self: end;
 }
 
@@ -512,6 +512,12 @@ h3 {
     var(--surface-bg);
   box-shadow: var(--shadow);
   object-fit: cover;
+}
+
+.graphic-photo img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .photo-placeholder {
@@ -985,7 +991,7 @@ h3 {
   }
 
   .stack-photo,
-  .stack-photo:nth-child(2) {
+  .stack-photo:nth-child(even) {
     justify-self: stretch;
     width: 100%;
   }
