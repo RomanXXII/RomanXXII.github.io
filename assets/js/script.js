@@ -26,7 +26,10 @@ function setTheme(theme) {
 
   themeToggle.setAttribute("aria-pressed", String(isLight));
   themeToggle.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
-  themeToggleText.textContent = isLight ? "Dark" : "Light";
+
+  if (themeToggleText) {
+    themeToggleText.textContent = isLight ? "Dark" : "Light";
+  }
 }
 
 if (themeToggle) {
