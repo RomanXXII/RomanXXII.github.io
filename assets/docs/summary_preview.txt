@@ -1,0 +1,59 @@
+Matrix: /home/beam0017/research/llm-binary-analysis/results/20260414_091525__calc_op2.exe_hlil__vs__enterprise_simulator_op2.exe_hlil__bs1300__rc10/matrix.csv
+Shape: 6 rows x 10 cols
+Filled cells: 60 (missing: 0)
+
+Overall score distribution:
+- mean: 5.773
+- median: 5.700
+- min: 2.500
+- max: 9.200
+- stdev: 1.703
+
+Best diagonal:
+- offset: 4
+- length: 6
+- mean: 6.533
+- median: 6.450
+- sum: 39.200
+
+Best normalized diagonal band:
+- band index: 3
+- center drift (normalized): 0.300
+- length: 3
+- mean: 7.700
+- median: 8.100
+- sum: 23.100
+
+Strongest diagonal segment:
+- score: 9.500
+- segment length: 5
+- mean similarity on segment: 6.900
+- offset: 4
+
+Best monotone alignment path:
+- score: 18.850
+- path length: 14
+- mean similarity on path: 6.771
+- mean absolute scaled drift: 1.214
+- start: A_0 vs B_0
+- end: A_5 vs B_8
+
+Top cells:
+- A_0 vs B_8: score=9, offset=8, scaled_drift=8.000
+- A_5 vs B_8: score=8, offset=3, scaled_drift=-1.000
+- A_3 vs B_6: score=8, offset=3, scaled_drift=0.600
+- A_3 vs B_8: score=8, offset=5, scaled_drift=2.600
+- A_0 vs B_6: score=8, offset=6, scaled_drift=6.000
+- A_2 vs B_6: score=8, offset=4, scaled_drift=2.400
+- A_0 vs B_5: score=8, offset=5, scaled_drift=5.000
+- A_1 vs B_4: score=8, offset=3, scaled_drift=2.200
+- A_2 vs B_8: score=8, offset=6, scaled_drift=4.400
+- A_0 vs B_0: score=8, offset=0, scaled_drift=0.000
+
+Diagonal accuracy score:
+- final score: 0.382419
+- strength: 0.705000
+- coverage: 0.707107
+- smoothness: 0.767123
+- path length: 14
+- strong threshold: 6.000

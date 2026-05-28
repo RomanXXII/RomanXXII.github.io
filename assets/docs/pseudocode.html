@@ -1,0 +1,92 @@
+<h3>Protocol Overview</h3>
+<pre><code>START SECURE CHAT SESSION
+
+Peer A and Peer B each generate:
+  encryption_private_key
+  encryption_public_key
+  signing_private_key
+  signing_public_key
+
+Each peer signs its own encryption public key:
+  signature = Sign(signing_private_key, encryption_public_key)
+
+Each peer sends the other:
+  encryption_public_key
+  signature
+  signing_public_key
+
+
+VERIFY PEER IDENTITY
+
+On receipt of peer key material:
+  peer_encryption_public_key = received encryption public key
+  peer_signature = received signature
+  peer_signing_public_key = received signing public key
+
+Verify:
+  is_valid = Verify(
+    peer_signing_public_key,
+    peer_encryption_public_key,
+    peer_signature
+  )
+
+If is_valid is false:
+  terminate connection
+
+If is_valid is true:
+  continue secure setup
+
+
+DERIVE SHARED SECRET
+
+Each peer combines:
+  own encryption private key
+  peer encryption public key
+
+To create:
+  shared_secret
+
+Both peers independently derive the same shared secret without sending it directly.
+
+
+SEND ENCRYPTED MESSAGE
+
+When user sends a message:
+  plaintext = user input
+
+  nonce = GenerateRandomNonce()
+
+  ciphertext = Encrypt(
+    shared_secret,
+    nonce,
+    plaintext
+  )
+
+  packet = MessageType || MessageLength || ciphertext
+
+  send packet over socket
+
+
+RECEIVE ENCRYPTED MESSAGE
+
+When packet is received:
+  read message type
+  read message length
+  read ciphertext bytes
+
+  plaintext = Decrypt(
+    shared_secret,
+    ciphertext
+  )
+
+  display plaintext in chat window
+  display ciphertext in encrypted-message window
+
+
+SECURITY PROPERTIES DEMONSTRATED
+
+The shared secret is never transmitted directly.
+Each message is encrypted before socket transmission.
+Fresh nonces prevent identical messages from producing identical ciphertext.
+Signed public keys help prevent unauthorized key substitution.
+Plaintext and ciphertext are displayed separately to demonstrate encryption behavior.</code></pre>

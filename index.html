@@ -14,55 +14,93 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="style.css" />
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.documentElement.dataset.theme = "light";
+      }
+    } catch {
+      document.documentElement.dataset.theme = "dark";
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Roman Beames home">RB</a>
+    <a class="brand" href="index.html" aria-label="Roman Beames home">RB</a>
     <nav class="site-nav" aria-label="Primary navigation">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#research">Research</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" aria-current="page">About</a>
+      <a href="pages/projects.html">Projects</a>
+      <a href="pages/beyond.html">Beyond</a>
+      <a href="pages/contact.html">Contact</a>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true"></span>
+      <span class="theme-toggle-text">Light</span>
+    </button>
   </header>
 
-  <main id="top">
+  <main id="main">
     <section class="hero section-wrap">
       <div class="hero-copy">
-        <p class="eyebrow">AI Security &middot; Cybersecurity Engineering &middot; Binary Analysis</p>
+        <p class="eyebrow">AI Security &middot; Cybersecurity Engineering &middot; Resilient Infrastructure</p>
         <h1>Roman Beames</h1>
         <p class="lead">
-          Research-oriented computer scientist focused on secure AI systems, reverse engineering,
-          autonomous systems, and infrastructure security.
+          Research-oriented computer scientist interested in securing intelligent systems, understanding how 
+          complex software behaves, and building resilient infrastructure for emerging technologies.
         </p>
         <div class="hero-actions" aria-label="Primary links">
-          <a class="button primary" href="resume.pdf">Resume</a>
-          <a class="button secondary" href="https://github.com/RomanXXII">GitHub</a>
-          <a class="button secondary" href="#contact">Contact</a>
+          <a class="button primary" href="assets/docs/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a class="button secondary" href="https://github.com/RomanXXII" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="button secondary" href="pages/contact.html">Contact</a>
         </div>
       </div>
 
-      <figure class="hero-visual" aria-label="Abstract research systems visual">
-        <img src="assets/research-systems-hero.png" alt="" />
+      <figure class="hero-visual">
+        <img
+          src="assets/images/hero/RBselfportrait.jpg"
+          alt="Portrait of Roman Beames"
+          width="1023"
+          height="1537"
+          decoding="async"
+          fetchpriority="high"
+        />
       </figure>
     </section>
 
-    <section class="section-wrap split" id="about">
-      <div>
+    <section class="section-wrap about-section" id="about">
+      <div class="about-heading">
         <p class="section-kicker">About</p>
-        <h2>Building at the intersection of AI, security, and engineered systems.</h2>
+        <h2>Building at the intersection of AI and cybersecurity.</h2>
       </div>
-      <div class="body-copy">
-        <p>
-          I graduated summa cum laude with a B.S. in Computer Science from the University of
-          Oklahoma and am an incoming M.S. Cybersecurity Engineering student at Auburn University.
+      <div class="about-content">
+        <p class="about-lead">
+          I recently graduated <i>summa cum laude</i> with a B.S. in Computer Science from the University of
+          Oklahoma. This fall, I'll be attending Auburn University to pursue an M.S. in Cybersecurity Engineering. War Eagle!
         </p>
         <p>
-          My work centers on technical depth: evaluating machine learning systems, studying binary
-          similarity through intermediate representations, building secure communication prototypes,
-          and experimenting with autonomous-system robustness.
+          My work explores how intelligent systems can be evaluated, secured, and deployed safely within complex technical
+          environments, with interests spanning machine learning security, autonomous systems, and resilient cyber infrastructure.
+          I am especially interested in the challenges that emerge as these systems become increasingly embedded in everyday life.
         </p>
+        <dl class="about-points" aria-label="Academic and technical focus">
+          <div>
+            <dt>Graduate focus</dt>
+            <dd>Preparing for security engineering work with a focus on AI security, reverse engineering, and the reliability 
+              of increasingly autonomous systems.</dd>
+          </div>
+          <div>
+            <dt>Questions I chase</dt>
+            <dd>How do AI systems fail, how can we evaluate their behavior, and what makes people able to actually trust them in real-world environments?</dd>
+          </div>
+          <div>
+            <dt>What I build toward</dt>
+            <dd>Secure and understandable systems that help engineers inspect, evaluate, and safely integrate AI into the technologies people use every day.</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
@@ -109,82 +147,90 @@
           </ul>
         </article>
 
-        <article class="project-card">
-          <div class="project-meta">
-            <span>Security</span>
-            <span>Applied Cryptography</span>
+        <article class="project-card project-card-featured">
+          <div class="project-card-main">
+            <div class="project-meta">
+              <span>Security</span>
+              <span>Applied Cryptography</span>
+            </div>
+            <h3>Secure Peer-to-Peer Messaging Tool</h3>
+            <p>
+              Developed a secure messaging prototype that paired encrypted socket transport
+              with peer authentication, key exchange, and a GUI for comparing plaintext and ciphertext behavior.
+            </p>
           </div>
-          <h3>Secure Peer-to-Peer Messaging Tool</h3>
-          <p>
-            Developed a Python secure messaging prototype using encryption, key exchange, and
-            authentication and integrity concepts.
-          </p>
-          <ul class="tag-list" aria-label="Project focus areas">
-            <li>Python</li>
-            <li>AES encryption</li>
-            <li>Diffie-Hellman</li>
-            <li>Integrity checks</li>
-          </ul>
-        </article>
-
-        <article class="project-card">
-          <div class="project-meta">
-            <span>Simulation</span>
-            <span>Secure Autonomy</span>
+          <div class="project-card-support">
+            <ul class="tag-list" aria-label="Project focus areas">
+              <li>PyNaCl encryption</li>
+              <li>Signed public keys</li>
+              <li>Socket transport</li>
+              <li>Tkinter GUI</li>
+            </ul>
           </div>
-          <h3>CARLA Reinforcement Learning / Autonomous Systems Work</h3>
-          <p>
-            Explored reinforcement learning in CARLA with emphasis on reward design, robustness
-            testing, and autonomous driving simulation.
-          </p>
-          <ul class="tag-list" aria-label="Project focus areas">
-            <li>CARLA</li>
-            <li>Reward design</li>
-            <li>Robustness testing</li>
-            <li>Simulation research</li>
-          </ul>
         </article>
+      </div>
+      <div class="section-action">
+        <a class="button secondary" href="pages/projects.html">View project details</a>
       </div>
     </section>
 
-    <section class="section-wrap research-band" id="research">
-      <div class="section-heading">
-        <p class="section-kicker">Research Interests</p>
-        <h2>Problems I am drawn toward</h2>
+    <section class="section-wrap beyond-section" id="beyond">
+      <div class="beyond-heading">
+        <p class="section-kicker">Beyond the Lab</p>
+        <h2>Leadership, service, and creative work</h2>
+        <p>
+          The same habits that matter in technical work show up in the places where I learned to lead:
+          preparation, trust, communication, and care for the people beside me.
+        </p>
       </div>
-      <div class="interest-grid">
-        <span>AI security</span>
-        <span>Cybersecurity engineering</span>
-        <span>Reverse engineering</span>
-        <span>Binary analysis</span>
-        <span>Secure autonomous systems</span>
-        <span>Critical infrastructure security</span>
-        <span>Machine learning systems</span>
-        <span>Secure infrastructure</span>
+      <div class="beyond-pathways">
+        <a class="beyond-card" href="pages/beyond.html#pride">
+          <span>Pride of Oklahoma</span>
+          <strong>Music, discipline, and shared standards from four years in the marching band.</strong>
+        </a>
+        <a class="beyond-card" href="pages/beyond.html#kkpsi">
+          <span>Kappa Kappa Psi</span>
+          <strong>District leadership, chapter service, mentorship, and national committee work.</strong>
+        </a>
+        <a class="beyond-card" href="pages/beyond.html#visual-media">
+          <span>Visual Media</span>
+          <strong>Graphic design and social content built for real audiences and fast communication.</strong>
+        </a>
+        <a class="button secondary" href="pages/beyond.html">Read more</a>
       </div>
-    </section>
-
-    <section class="section-wrap notes-section">
-      <div>
-        <p class="section-kicker">Next</p>
-        <h2>Research notes and writing</h2>
-      </div>
-      <p class="body-copy">
-        This site is structured so a future research notes or blog section can be added without
-        changing the core layout. Good first topics would be binary similarity evaluation design,
-        autonomous-system robustness testing, and practical AI security experiments.
-      </p>
     </section>
   </main>
 
   <footer class="site-footer section-wrap" id="contact">
-    <div>
+    <div class="contact-copy">
       <p class="section-kicker">Contact</p>
-      <h2>Open to research, graduate, and engineering conversations.</h2>
+      <h2>Let's connect!</h2>
+      <p>
+        Whether it is a research idea, an engineering opportunity, or a shared
+        interest in secure systems, feel free to reach out.
+      </p>
     </div>
-    <div class="footer-links">
-      <a href="https://github.com/RomanXXII">GitHub</a>
-      <a href="resume.pdf">Resume</a>
+    <div class="contact-panel" aria-label="Contact links">
+      <a class="primary-contact" href="mailto:adb0138@auburn.edu" target="_blank" rel="noopener noreferrer">
+        <span>Best way to reach me</span>
+        <strong>adb0138@auburn.edu</strong>
+      </a>
+      <a href="mailto:romanbeames@gmail.com" target="_blank" rel="noopener noreferrer">
+        <span>Personal</span>
+        <strong>romanbeames@gmail.com</strong>
+      </a>
+      <a href="https://www.linkedin.com/in/romanbeames" target="_blank" rel="noopener noreferrer">
+        <span>LinkedIn</span>
+        <strong>romanbeames</strong>
+      </a>
+      <a href="https://github.com/RomanXXII" target="_blank" rel="noopener noreferrer">
+        <span>GitHub</span>
+        <strong>RomanXXII</strong>
+      </a>
+      <a href="assets/docs/resume.pdf" target="_blank" rel="noopener noreferrer">
+        <span>Resume</span>
+        <strong>PDF</strong>
+      </a>
     </div>
   </footer>
 </body>
