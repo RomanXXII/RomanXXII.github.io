@@ -574,7 +574,10 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 26px;
-  background: var(--surface-bg);
+  background:
+    linear-gradient(145deg, rgba(114, 216, 232, 0.1), rgba(215, 181, 109, 0.065)),
+    var(--surface-bg);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.16);
 }
 
 .detail-card h2 {
@@ -588,6 +591,129 @@ h3 {
 .detail-card p:last-child,
 .detail-card .tag-list:last-child {
   margin-bottom: 0;
+}
+
+.project-detail-card {
+  padding: 0;
+  overflow: hidden;
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.project-detail-card:hover,
+.project-detail-card[open] {
+  border-color: rgba(114, 216, 232, 0.42);
+  background:
+    linear-gradient(145deg, rgba(114, 216, 232, 0.15), rgba(215, 181, 109, 0.1)),
+    var(--surface-bg);
+  box-shadow: 0 22px 66px rgba(0, 0, 0, 0.22);
+}
+
+.project-detail-card summary {
+  position: relative;
+  display: grid;
+  gap: 0;
+  min-height: 360px;
+  align-content: start;
+  padding: 42px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.project-detail-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-detail-card summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -6px;
+}
+
+.project-summary-heading {
+  display: block;
+  max-width: 980px;
+  margin-top: 18px;
+  color: var(--text);
+  font-size: clamp(2.5rem, 6vw, 4.85rem);
+  font-weight: 800;
+  line-height: 0.96;
+}
+
+.project-summary-copy {
+  display: block;
+  max-width: 840px;
+  margin-top: 24px;
+  color: var(--accent-strong);
+  font-size: clamp(1.12rem, 1.7vw, 1.28rem);
+  line-height: 1.7;
+}
+
+.project-summary-tags {
+  margin-top: 28px;
+}
+
+.project-summary-tags li {
+  border: 1px solid rgba(215, 181, 109, 0.38);
+  border-radius: 999px;
+  background: rgba(215, 181, 109, 0.11);
+  color: var(--warm);
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding: 7px 10px;
+}
+
+.project-card-body {
+  padding: 2px 42px 42px;
+  border-top: 1px solid rgba(114, 216, 232, 0.18);
+}
+
+.project-card-body p {
+  color: var(--text);
+}
+
+.project-card-body p:first-child {
+  margin-top: 32px;
+}
+
+.expand-control {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  border: 1px solid rgba(114, 216, 232, 0.36);
+  border-radius: var(--radius);
+  padding: 9px 14px;
+  background: rgba(114, 216, 232, 0.08);
+  color: var(--accent-strong);
+  font-size: 0.92rem;
+  font-weight: 800;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.expand-control::before {
+  content: "Expand project";
+}
+
+.expand-control::after {
+  content: "+";
+  margin-left: 10px;
+  color: var(--warm);
+  font-size: 1rem;
+}
+
+.project-detail-card[open] .expand-control {
+  border-color: rgba(215, 181, 109, 0.42);
+  background: rgba(215, 181, 109, 0.09);
+  color: var(--warm);
+}
+
+.project-detail-card[open] .expand-control::before {
+  content: "Collapse project";
+}
+
+.project-detail-card[open] .expand-control::after {
+  content: "-";
 }
 
 .project-links {
@@ -606,15 +732,17 @@ h3 {
 .project-media-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin: 28px 0 22px;
+  gap: 16px;
+  margin: 32px 0 24px;
 }
 
 .media-preview {
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(114, 216, 232, 0.22);
   border-radius: var(--radius);
-  background: var(--surface-bg-soft);
+  background:
+    linear-gradient(145deg, rgba(114, 216, 232, 0.06), rgba(215, 181, 109, 0.045)),
+    var(--surface-bg-soft);
   color: var(--text);
   text-decoration: none;
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
@@ -628,7 +756,8 @@ h3 {
 
 .media-preview img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  min-height: 260px;
+  aspect-ratio: 16 / 9;
   border-bottom: 1px solid var(--line);
   background: var(--panel);
   object-fit: contain;
@@ -638,8 +767,18 @@ h3 {
   grid-column: 1 / -1;
 }
 
+.annotation-media-grid .media-preview-wide {
+  grid-column: 1 / -1;
+}
+
 .research-media-grid .media-preview-wide img {
+  min-height: 300px;
   aspect-ratio: 21 / 7;
+}
+
+.annotation-media-grid .media-preview-wide img {
+  min-height: 360px;
+  aspect-ratio: 16 / 8;
 }
 
 .media-preview span {
@@ -652,9 +791,11 @@ h3 {
 
 .protocol-panel {
   margin-top: 22px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(215, 181, 109, 0.26);
   border-radius: var(--radius);
-  background: rgba(0, 0, 0, 0.16);
+  background:
+    linear-gradient(145deg, rgba(215, 181, 109, 0.075), rgba(114, 216, 232, 0.045)),
+    rgba(0, 0, 0, 0.16);
 }
 
 .protocol-panel-header {
@@ -664,7 +805,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(215, 181, 109, 0.22);
 }
 
 .protocol-panel-header h3 {
@@ -691,7 +832,7 @@ h3 {
 }
 
 .protocol-panel code {
-  color: var(--muted);
+  color: var(--text);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.88rem;
   line-height: 1.55;
@@ -816,12 +957,26 @@ h3 {
     min-height: auto;
   }
 
+  .project-detail-card summary {
+    min-height: 320px;
+    padding: 34px;
+  }
+
+  .project-card-body {
+    padding: 2px 34px 34px;
+  }
+
   .contact-panel {
     grid-template-columns: 1fr;
   }
 
   .project-media-grid {
     grid-template-columns: 1fr;
+  }
+
+  .media-preview img,
+  .research-media-grid .media-preview-wide img {
+    min-height: 240px;
   }
 
   .photo-stack {
@@ -864,5 +1019,36 @@ h3 {
 
   .hero-actions .button {
     width: 100%;
+  }
+
+  .project-detail-card summary {
+    min-height: 300px;
+    padding: 26px;
+  }
+
+  .project-card-body {
+    padding: 2px 26px 26px;
+  }
+
+  .project-summary-heading {
+    font-size: clamp(2.1rem, 13vw, 3.3rem);
+    line-height: 1;
+  }
+
+  .project-summary-copy {
+    margin-top: 20px;
+  }
+
+  .project-summary-tags {
+    margin-top: 22px;
+  }
+
+  .expand-control {
+    margin-top: 26px;
+  }
+
+  .media-preview img,
+  .research-media-grid .media-preview-wide img {
+    min-height: 210px;
   }
 }

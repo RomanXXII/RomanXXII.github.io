@@ -42,7 +42,7 @@
   <main class="detail-page">
     <section class="section-wrap page-hero">
       <p class="eyebrow">Projects</p>
-      <h1>Research and engineering work</h1>
+      <h1>Research and Engineering Work</h1>
       <p class="lead">
         Selected work across AI security, secure systems, autonomous-system research,
         and applied cybersecurity engineering.
@@ -50,78 +50,82 @@
     </section>
 
     <section class="section-wrap detail-list">
-      <article class="detail-card">
-        <p class="section-kicker">AI + Binary Analysis</p>
-        <h2>LLM-Based Binary Similarity Research</h2>
-        <p>
-          Explored cybersecurity applications for large language models by investigating whether
-          they could identify meaningful similarity and potentially malicious behavioral patterns
-          within lifted binary code represented as High-Level Intermediate Language (HLIL)
-          generated through Binary Ninja.
-        </p>
-        <ul class="tag-list">
-          <li>Cross-architecture analysis</li>
-          <li>Optimization-level comparisons</li>
-          <li>Prompt engineering</li>
-          <li>Nondeterminism studies</li>
-        </ul>
-        <p>
-          The project was motivated by modern cybersecurity challenges surrounding generated and
-          obfuscated malicious code. As attackers gain increasing access to AI-assisted tooling,
-          malicious behavior can often be disguised beneath structurally different implementations,
-          making low-level manual analysis increasingly difficult and time-intensive for human analysts.
-        </p>
+      <details class="detail-card project-detail-card">
+        <summary>
+          <span class="section-kicker">AI + Binary Analysis</span>
+          <span class="project-summary-heading">LLM-Based Binary Similarity Research</span>
+          <span class="project-summary-copy">
+            Explored cybersecurity applications for large language models by investigating whether
+            they could identify meaningful similarity and potentially malicious behavioral patterns
+            within lifted binary code represented as High-Level Intermediate Language (HLIL)
+            generated through Binary Ninja.
+          </span>
+          <ul class="tag-list project-summary-tags">
+            <li>Cross-architecture analysis</li>
+            <li>Optimization-level comparisons</li>
+            <li>Prompt engineering</li>
+            <li>Nondeterminism studies</li>
+          </ul>
+          <span class="expand-control" aria-hidden="true"></span>
+        </summary>
+        <div class="project-card-body">
+          <p>
+            The project was motivated by modern cybersecurity challenges surrounding generated and
+            obfuscated malicious code. As attackers gain increasing access to AI-assisted tooling,
+            malicious behavior can often be disguised beneath structurally different implementations,
+            making low-level manual analysis increasingly difficult and time-intensive for human analysts.
+          </p>
 
-        <p>
-          Using Python-based analysis pipelines, I developed a block-comparison workflow that divided
-          HLIL files into manageable sections and compared them through repeated LLM similarity scoring.
-          Earlier stages of the project experimented with whole-file comparisons and normalization
-          pipelines before transitioning toward pairwise block analysis to better manage model context
-          limitations and improve scoring consistency.
-        </p>
+          <p>
+            Using Python-based analysis pipelines, I developed a block-comparison workflow that divided
+            HLIL files into manageable sections and compared them through repeated LLM similarity scoring.
+            Earlier stages of the project experimented with whole-file comparisons and normalization
+            pipelines before transitioning toward pairwise block analysis to better manage model context
+            limitations and improve scoring consistency.
+          </p>
 
-        <p>
-          Testing included binaries compiled across multiple architectures and optimization levels,
-          including ARM and x86 targets alongside O2 and O3 compiler optimizations, in order to evaluate
-          whether meaningful behavioral alignment could still be detected despite significant structural
-          and compiler-driven changes in the resulting binaries.
-        </p>
+          <p>
+            Testing included binaries compiled across multiple architectures and optimization levels,
+            including ARM and x86 targets alongside O2 and O3 compiler optimizations, in order to evaluate
+            whether meaningful behavioral alignment could still be detected despite significant structural
+            and compiler-driven changes in the resulting binaries.
+          </p>
 
-        <p>
-          Multiple model architectures were explored throughout development, including
-          <code>gpt-oss:20b</code>, <code>llama3.3:70b</code>, and
-          <code>gpt-oss:120b</code>. Supporting Python scripts generated similarity matrices,
-          heatmaps, diagonal alignment statistics, and deterministic scoring metrics to analyze
-          model consistency, context sensitivity, and nondeterministic behavior across repeated runs.
-        </p>
+          <p>
+            Multiple model architectures were explored throughout development, including
+            <code>gpt-oss:20b</code>, <code>llama3.3:70b</code>, and
+            <code>gpt-oss:120b</code>. Supporting Python scripts generated similarity matrices,
+            heatmaps, diagonal alignment statistics, and deterministic scoring metrics to analyze
+            model consistency, context sensitivity, and nondeterministic behavior across repeated runs.
+          </p>
 
-        <div class="project-media-grid research-media-grid" aria-label="LLM binary similarity research previews">
-          <a href="../assets/images/command_preview.png" target="_blank" rel="noopener noreferrer"
-            class="media-preview media-preview-wide">
-            <img src="../assets/images/command_preview.png"
-              alt="Command-line preview from the binary similarity research pipeline" />
-            <span>Pipeline command output</span>
-          </a>
-          <a href="../assets/images/current_matrix_preview.png" target="_blank" rel="noopener noreferrer"
-            class="media-preview">
-            <img src="../assets/images/current_matrix_preview.png"
-              alt="Similarity matrix preview generated by the binary comparison workflow" />
-            <span>Similarity matrix</span>
-          </a>
-          <a href="../assets/images/heatmap_preview.png" target="_blank" rel="noopener noreferrer"
-            class="media-preview">
-            <img src="../assets/images/heatmap_preview.png"
-              alt="Heatmap preview visualizing binary similarity scoring results" />
-            <span>Similarity heatmap</span>
-          </a>
-        </div>
-
-        <div class="protocol-panel">
-          <div class="protocol-panel-header">
-            <h3>Run summary</h3>
-            <a href="../assets/docs/summary_preview.txt" target="_blank" rel="noopener noreferrer">Open raw summary</a>
+          <div class="project-media-grid research-media-grid" aria-label="LLM binary similarity research previews">
+            <a href="../assets/images/command_preview.png" target="_blank" rel="noopener noreferrer"
+              class="media-preview media-preview-wide">
+              <img src="../assets/images/command_preview.png"
+                alt="Command-line preview from the binary similarity research pipeline" />
+              <span>Pipeline command output</span>
+            </a>
+            <a href="../assets/images/current_matrix_preview.png" target="_blank" rel="noopener noreferrer"
+              class="media-preview">
+              <img src="../assets/images/current_matrix_preview.png"
+                alt="Similarity matrix preview generated by the binary comparison workflow" />
+              <span>Similarity matrix</span>
+            </a>
+            <a href="../assets/images/heatmap_preview.png" target="_blank" rel="noopener noreferrer"
+              class="media-preview">
+              <img src="../assets/images/heatmap_preview.png"
+                alt="Heatmap preview visualizing binary similarity scoring results" />
+              <span>Similarity heatmap</span>
+            </a>
           </div>
-          <pre><code>Matrix: results/20260420_222029__calc_op2.exe_hlil__vs__calc_op3.exe_hlil__bs1300__rc10/matrix.csv
+
+          <div class="protocol-panel">
+            <div class="protocol-panel-header">
+              <h3>Run summary</h3>
+              <a href="../assets/docs/summary_preview.txt" target="_blank" rel="noopener noreferrer">Open raw summary</a>
+            </div>
+            <pre><code>Matrix: results/20260420_222029__calc_op2.exe_hlil__vs__calc_op3.exe_hlil__bs1300__rc10/matrix.csv
 Shape: 6 rows x 6 cols
 Filled cells: 36 (missing: 0)
 
@@ -175,97 +179,142 @@ Diagonal accuracy score:
 - smoothness: 0.000000
 - path length: 6
 - strong threshold: 6.000</code></pre>
-        </div>
-
-        <div class="project-links">
-          <span class="project-note">
-            Developed as part of research conducted through OU SecretLab. Source repository is private.
-          </span>
-        </div>
-      </article>
-
-      <article class="detail-card">
-        <p class="section-kicker">Autonomous Systems + Infrastructure</p>
-        <h2>Autonomous Driving Data & Annotation Platform</h2>
-        <p>
-          Contributed to a containerized data and annotation pipeline designed for autonomous-driving
-          computer vision workflows using OpenPilot and CVAT-based labeling infrastructure.
-        </p>
-        <p>
-          The platform was designed to ingest, process, manage, and annotate driving data for
-          future machine learning and human-review workflows. The system integrated CVAT labeling,
-          artifact storage, route downloading, dataset export workflows, and distributed worker
-          infrastructure within a unified containerized environment.
-        </p>
-
-        <p>
-          My work focused heavily on the CVAT integration layer, including running and configuring
-          CVAT containers, interacting with the CVAT API through Python automation scripts, creating
-          task-batching workflows, exporting annotations as COCO JSON, and testing annotation
-          pipelines against live CVAT deployments. I also worked with model-assisted labeling
-          workflows using HuggingFace object-detection models including RT-DETRv2.
-        </p>
-
-        <p>
-          The annotation pipeline followed a human-in-the-loop workflow: upload image batches into
-          CVAT tasks, run automated annotation passes, route annotations through human review, export
-          structured labels, and support future retraining workflows for autonomous-driving models.
-          The project explored how automation and human validation could be combined to improve
-          annotation scalability and dataset generation efficiency for autonomous-driving research.
-        </p>
-
-        <p>
-          The broader system architecture used Docker Compose orchestration alongside FastAPI,
-          React, PostgreSQL, MinIO object storage, and asynchronous worker containers responsible
-          for downloading, processing, exporting, and managing OpenPilot driving-route data.
-        </p>
-        <div class="project-links">
-          <a href="../assets/docs/mila_capstone_poster.pdf" target="_blank" rel="noopener noreferrer"
-            class="button secondary">
-            View Capstone Poster
-          </a>
-          <span class="project-note">
-            Developed as part of a capstone project for the MiLA Autonomous Driving Lab at OU.
-            Source repository is private.
-          </span>
-        </div>
-      </article>
-
-      <article class="detail-card">
-        <p class="section-kicker">Applied Security</p>
-        <h2>Secure Peer-to-Peer Messaging Tool</h2>
-        <p>
-          The final implementation used PyNaCl Box encryption to establish shared secrets through
-          elliptic-curve Diffie-Hellman-style exchange while verifying peer authenticity through
-          signed public keys. Additional work included encrypted message transport, nonce handling,
-          socket communication management, GUI development with Tkinter, and plaintext-versus-ciphertext
-          visualization for debugging and educational analysis.
-        </p>
-
-        <p>
-          The project strengthened my understanding of how cryptographic concepts translate into
-          real-world implementation decisions, particularly surrounding trust establishment,
-          authentication, secure communication channels, and protocol behavior under practical constraints.
-        </p>
-
-        <div class="project-media-grid" aria-label="Secure peer-to-peer messaging screenshots">
-          <a href="../assets/images/loginpreview.png" target="_blank" rel="noopener noreferrer" class="media-preview">
-            <img src="../assets/images/loginpreview.png" alt="Login window for the secure peer-to-peer messaging tool" />
-            <span>Connection setup</span>
-          </a>
-          <a href="../assets/images/messagepreview.png" target="_blank" rel="noopener noreferrer" class="media-preview">
-            <img src="../assets/images/messagepreview.png"
-              alt="Chat window showing plaintext and encrypted message views" />
-            <span>Encrypted messaging view</span>
-          </a>
-        </div>
-
-        <div class="protocol-panel">
-          <div class="protocol-panel-header">
-            <h3>Protocol pseudocode</h3>
-            <a href="../assets/docs/pseudocode.html" target="_blank" rel="noopener noreferrer">Open full pseudocode</a>
           </div>
-          <pre><code>START SECURE CHAT SESSION
+
+          <div class="project-links">
+            <span class="project-note">
+              Developed as part of research conducted through OU SecretLab. Source repository is private.
+            </span>
+          </div>
+        </div>
+      </details>
+
+      <details class="detail-card project-detail-card">
+        <summary>
+          <span class="section-kicker">Autonomous Systems + Infrastructure</span>
+          <span class="project-summary-heading">Autonomous Driving Data & Annotation Platform</span>
+          <span class="project-summary-copy">
+            Contributed to a containerized data and annotation pipeline designed for autonomous-driving
+            computer vision workflows using OpenPilot and CVAT-based labeling infrastructure.
+          </span>
+          <ul class="tag-list project-summary-tags">
+            <li>CVAT integration</li>
+            <li>Docker Compose</li>
+            <li>FastAPI + React</li>
+            <li>Human-in-the-loop labeling</li>
+          </ul>
+          <span class="expand-control" aria-hidden="true"></span>
+        </summary>
+        <div class="project-card-body">
+          <p>
+            The platform was designed to ingest, process, manage, and annotate driving data for
+            future machine learning and human-review workflows. The system integrated CVAT labeling,
+            artifact storage, route downloading, dataset export workflows, and distributed worker
+            infrastructure within a unified containerized environment.
+          </p>
+
+          <p>
+            My work focused heavily on the CVAT integration layer, including running and configuring
+            CVAT containers, interacting with the CVAT API through Python automation scripts, creating
+            task-batching workflows, exporting annotations as COCO JSON, and testing annotation
+            pipelines against live CVAT deployments. I also worked with model-assisted labeling
+            workflows using HuggingFace object-detection models including RT-DETRv2.
+          </p>
+
+          <p>
+            The annotation pipeline followed a human-in-the-loop workflow: upload image batches into
+            CVAT tasks, run automated annotation passes, route annotations through human review, export
+            structured labels, and support future retraining workflows for autonomous-driving models.
+            The project explored how automation and human validation could be combined to improve
+            annotation scalability and dataset generation efficiency for autonomous-driving research.
+          </p>
+
+          <p>
+            The broader system architecture used Docker Compose orchestration alongside FastAPI,
+            React, PostgreSQL, MinIO object storage, and asynchronous worker containers responsible
+            for downloading, processing, exporting, and managing OpenPilot driving-route data.
+          </p>
+
+          <div class="project-media-grid annotation-media-grid" aria-label="Autonomous driving annotation platform previews">
+            <a href="../assets/images/routes_homepage.png" target="_blank" rel="noopener noreferrer"
+              class="media-preview media-preview-wide">
+              <img src="../assets/images/routes_homepage.png"
+                alt="Routes dashboard homepage for the autonomous driving annotation platform" />
+              <span>Routes dashboard</span>
+            </a>
+            <a href="../assets/images/route_segment.png" target="_blank" rel="noopener noreferrer" class="media-preview">
+              <img src="../assets/images/route_segment.png"
+                alt="Route segment view for autonomous driving data review" />
+              <span>Route segment review</span>
+            </a>
+            <a href="../assets/images/project_diagram.png" target="_blank" rel="noopener noreferrer" class="media-preview">
+              <img src="../assets/images/project_diagram.png"
+                alt="System architecture diagram for the autonomous driving data and annotation platform" />
+              <span>System architecture</span>
+            </a>
+          </div>
+
+          <div class="project-links">
+            <a href="../assets/docs/mila_capstone_poster.pdf" target="_blank" rel="noopener noreferrer"
+              class="button secondary">
+              View Capstone Poster
+            </a>
+            <span class="project-note">
+              Developed as part of a capstone project for the MiLA Autonomous Driving Lab at OU.
+              Source repository is private.
+            </span>
+          </div>
+        </div>
+      </details>
+
+      <details class="detail-card project-detail-card">
+        <summary>
+          <span class="section-kicker">Applied Security</span>
+          <span class="project-summary-heading">Secure Peer-to-Peer Messaging Tool</span>
+          <span class="project-summary-copy">
+            The final implementation used PyNaCl Box encryption to establish shared secrets through
+            elliptic-curve Diffie-Hellman-style exchange while verifying peer authenticity through
+            signed public keys.
+          </span>
+          <ul class="tag-list project-summary-tags">
+            <li>PyNaCl encryption</li>
+            <li>Signed public keys</li>
+            <li>Socket transport</li>
+            <li>Tkinter GUI</li>
+          </ul>
+          <span class="expand-control" aria-hidden="true"></span>
+        </summary>
+        <div class="project-card-body">
+          <p>
+            Additional work included encrypted message transport, nonce handling,
+            socket communication management, GUI development with Tkinter, and plaintext-versus-ciphertext
+            visualization for debugging and educational analysis.
+          </p>
+
+          <p>
+            The project strengthened my understanding of how cryptographic concepts translate into
+            real-world implementation decisions, particularly surrounding trust establishment,
+            authentication, secure communication channels, and protocol behavior under practical constraints.
+          </p>
+
+          <div class="project-media-grid" aria-label="Secure peer-to-peer messaging screenshots">
+            <a href="../assets/images/loginpreview.png" target="_blank" rel="noopener noreferrer" class="media-preview">
+              <img src="../assets/images/loginpreview.png" alt="Login window for the secure peer-to-peer messaging tool" />
+              <span>Connection setup</span>
+            </a>
+            <a href="../assets/images/messagepreview.png" target="_blank" rel="noopener noreferrer" class="media-preview">
+              <img src="../assets/images/messagepreview.png"
+                alt="Chat window showing plaintext and encrypted message views" />
+              <span>Encrypted messaging view</span>
+            </a>
+          </div>
+
+          <div class="protocol-panel">
+            <div class="protocol-panel-header">
+              <h3>Protocol pseudocode</h3>
+              <a href="../assets/docs/pseudocode.html" target="_blank" rel="noopener noreferrer">Open full pseudocode</a>
+            </div>
+            <pre><code>START SECURE CHAT SESSION
 
 Peer A and Peer B each generate encryption and signing key pairs.
 Each peer signs its own encryption public key.
@@ -310,14 +359,15 @@ SECURITY PROPERTIES DEMONSTRATED
 The shared secret is never transmitted directly.
 Fresh nonces prevent identical messages from producing identical ciphertext.
 Signed public keys help prevent unauthorized key substitution.</code></pre>
-        </div>
+          </div>
 
-        <div class="project-links">
-          <span class="project-note">
-            Repository remains private to preserve academic integrity for future coursework submissions.
-          </span>
+          <div class="project-links">
+            <span class="project-note">
+              Repository remains private to preserve academic integrity for future coursework submissions.
+            </span>
+          </div>
         </div>
-      </article>
+      </details>
     </section>
   </main>
 </body>
