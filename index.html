@@ -31,7 +31,7 @@
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Roman Beames home">RB</a>
     <nav class="site-nav" aria-label="Primary navigation">
-      <a href="index.html">About</a>
+      <a href="#about" aria-current="page">About</a>
       <a href="pages/projects.html">Projects</a>
       <a href="pages/beyond.html">Beyond</a>
       <a href="pages/contact.html">Contact</a>
@@ -58,26 +58,41 @@
         </div>
       </div>
 
-      <figure class="hero-visual" aria-label="Roman Beames portrait">
-        <img src="assets/images/RBselfportrait.png" alt="" />
+      <figure class="hero-visual">
+        <img src="assets/images/RBselfportrait.png" alt="Portrait of Roman Beames" />
       </figure>
     </section>
 
-    <section class="section-wrap split" id="about">
-      <div>
+    <section class="section-wrap about-section" id="about">
+      <div class="about-heading">
         <p class="section-kicker">About</p>
         <h2>Building at the intersection of AI and cybersecurity.</h2>
       </div>
-      <div class="body-copy">
-        <p>
+      <div class="about-content">
+        <p class="about-lead">
           I recently graduated <i>summa cum laude</i> with a B.S. in Computer Science from the University of
           Oklahoma. This fall, I'll be attending Auburn University to pursue an M.S. in Cybersecurity Engineering. War Eagle!
         </p>
         <p>
-            My work explores how intelligent systems can be evaluated, secured, and deployed safely within complex technical 
-            environments, with interests spanning machine learning security, autonomous systems, and resilient cyber infrastructure. 
-            I am especially interested in the challenges that emerge as these systems become increasingly embedded in everyday life.
+          My work explores how intelligent systems can be evaluated, secured, and deployed safely within complex technical
+          environments, with interests spanning machine learning security, autonomous systems, and resilient cyber infrastructure.
+          I am especially interested in the challenges that emerge as these systems become increasingly embedded in everyday life.
         </p>
+        <dl class="about-points" aria-label="Academic and technical focus">
+          <div>
+            <dt>Graduate focus</dt>
+            <dd>Preparing for security engineering work with a focus on AI security, reverse engineering, and the reliability 
+              of increasingly autonomous systems.</dd>
+          </div>
+          <div>
+            <dt>Questions I chase</dt>
+            <dd>How do AI systems fail, how can we evaluate their behavior, and what makes people able to actually trust them in real-world environments?</dd>
+          </div>
+          <div>
+            <dt>What I build toward</dt>
+            <dd>Secure and understandable systems that help engineers inspect, evaluate, and safely integrate AI into the technologies people use every day.</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
@@ -124,22 +139,26 @@
           </ul>
         </article>
 
-        <article class="project-card">
-          <div class="project-meta">
-            <span>Security</span>
-            <span>Applied Cryptography</span>
+        <article class="project-card project-card-featured">
+          <div class="project-card-main">
+            <div class="project-meta">
+              <span>Security</span>
+              <span>Applied Cryptography</span>
+            </div>
+            <h3>Secure Peer-to-Peer Messaging Tool</h3>
+            <p>
+              Developed a secure messaging prototype that paired encrypted socket transport
+              with peer authentication, key exchange, and a GUI for comparing plaintext and ciphertext behavior.
+            </p>
           </div>
-          <h3>Secure Peer-to-Peer Messaging Tool</h3>
-          <p>
-            Developed a Python secure messaging prototype using encryption, key exchange, and
-            authentication and integrity concepts.
-          </p>
-          <ul class="tag-list" aria-label="Project focus areas">
-            <li>Python</li>
-            <li>AES encryption</li>
-            <li>Diffie-Hellman</li>
-            <li>Integrity checks</li>
-          </ul>
+          <div class="project-card-support">
+            <ul class="tag-list" aria-label="Project focus areas">
+              <li>PyNaCl encryption</li>
+              <li>Signed public keys</li>
+              <li>Socket transport</li>
+              <li>Tkinter GUI</li>
+            </ul>
+          </div>
         </article>
       </div>
       <div class="section-action">
@@ -148,20 +167,27 @@
     </section>
 
     <section class="section-wrap beyond-section" id="beyond">
-      <div>
+      <div class="beyond-heading">
         <p class="section-kicker">Beyond the Lab</p>
         <h2>Leadership, service, and creative work</h2>
-      </div>
-      <div class="beyond-overview">
         <p>
-          Outside of technical research, I have spent much of my time in
-          organizations that have defined my skills in preparation, trust, creativity, and communication.
+          The same habits that matter in technical work show up in the places where I learned to lead:
+          preparation, trust, communication, and care for the people beside me.
         </p>
-        <div class="mini-tags" aria-label="Beyond the lab focus areas">
-          <a href="https://www.ou.edu/finearts/music/bands/pride" target="_blank" rel="noopener noreferrer">Pride of Oklahoma</a>
-          <a href="https://www.kkpsi.org/" target="_blank" rel="noopener noreferrer">Kappa Kappa Psi</a>
-          <a href="https://www.instagram.com/ou_thepride" target="_blank" rel="noopener noreferrer">Visual Media</a>
-        </div>
+      </div>
+      <div class="beyond-pathways">
+        <a class="beyond-card" href="pages/beyond.html#pride">
+          <span>Pride of Oklahoma</span>
+          <strong>Music, discipline, and shared standards from four years in the marching band.</strong>
+        </a>
+        <a class="beyond-card" href="pages/beyond.html#kkpsi">
+          <span>Kappa Kappa Psi</span>
+          <strong>District leadership, chapter service, mentorship, and national committee work.</strong>
+        </a>
+        <a class="beyond-card" href="pages/beyond.html#visual-media">
+          <span>Visual Media</span>
+          <strong>Graphic design and social content built for real audiences and fast communication.</strong>
+        </a>
         <a class="button secondary" href="pages/beyond.html">Read more</a>
       </div>
     </section>
@@ -170,7 +196,7 @@
   <footer class="site-footer section-wrap" id="contact">
     <div class="contact-copy">
       <p class="section-kicker">Contact</p>
-      <h2>Let's connect.</h2>
+      <h2>Let's connect!</h2>
       <p>
         Whether it is a research idea, an engineering opportunity, or a shared
         interest in secure systems, feel free to reach out.
