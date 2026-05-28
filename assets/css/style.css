@@ -363,7 +363,6 @@ h3 {
 }
 
 #projects,
-.research-band,
 .beyond-section {
   padding: 88px 0;
   border-top: 1px solid var(--line);
@@ -421,8 +420,7 @@ h3 {
   list-style: none;
 }
 
-.tag-list li,
-.interest-grid span {
+.tag-list li {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--tag-bg);
@@ -433,20 +431,6 @@ h3 {
 
 .tag-list li {
   padding: 7px 10px;
-}
-
-.interest-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.interest-grid span {
-  display: flex;
-  min-height: 64px;
-  align-items: center;
-  padding: 14px 16px;
-  border-radius: var(--radius);
 }
 
 .beyond-overview p {
@@ -461,14 +445,23 @@ h3 {
   margin: 22px 0;
 }
 
-.mini-tags span {
-  border: 1px solid var(--line);
+.mini-tags a {
+  border: 1px solid rgba(114, 216, 232, 0.32);
   border-radius: 999px;
   padding: 7px 10px;
   background: var(--tag-bg);
-  color: var(--muted);
+  color: var(--accent);
   font-size: 0.86rem;
   font-weight: 700;
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.mini-tags a:hover {
+  transform: translateY(-3px);
+  border-color: rgba(114, 216, 232, 0.52);
+  background: var(--hover-bg);
+  color: var(--accent-strong);
 }
 
 .detail-page {
@@ -712,7 +705,8 @@ h3 {
 .site-footer {
   align-items: start;
   grid-template-columns: minmax(260px, 0.68fr) minmax(0, 1fr);
-  padding: 52px 0;
+  gap: 64px;
+  padding: 72px 0;
 }
 
 .contact-copy h2 {
@@ -720,7 +714,7 @@ h3 {
   font-size: clamp(1.65rem, 3vw, 2.35rem);
 }
 
-.contact-copy p {
+.contact-copy p:not(.section-kicker) {
   max-width: 620px;
   margin-bottom: 0;
   color: var(--muted);
@@ -729,7 +723,7 @@ h3 {
 .contact-panel {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 12px;
 }
 
 .contact-panel a {
@@ -739,7 +733,7 @@ h3 {
   justify-content: center;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 14px 16px;
+  padding: 16px 18px;
   background: var(--surface-bg);
   text-decoration: none;
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
@@ -749,6 +743,18 @@ h3 {
   transform: translateY(-1px);
   border-color: rgba(114, 216, 232, 0.34);
   background: var(--hover-bg);
+}
+
+.contact-panel .primary-contact {
+  grid-column: 1 / -1;
+  min-height: 96px;
+  background:
+    linear-gradient(135deg, rgba(114, 216, 232, 0.12), rgba(215, 181, 109, 0.08)),
+    var(--surface-bg);
+}
+
+.contact-panel .primary-contact:hover {
+  border-color: rgba(215, 181, 109, 0.38);
 }
 
 .contact-panel span {
@@ -761,8 +767,13 @@ h3 {
 .contact-panel strong {
   overflow-wrap: anywhere;
   color: var(--text);
-  font-size: 0.98rem;
+  font-size: 1rem;
   font-weight: 700;
+}
+
+.primary-contact strong {
+  color: var(--accent-strong);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
 }
 
 @media (max-width: 860px) {
@@ -797,7 +808,6 @@ h3 {
   }
 
   .project-grid,
-  .interest-grid,
   .detail-grid {
     grid-template-columns: 1fr;
   }
@@ -839,7 +849,6 @@ h3 {
   .hero,
   .split,
   #projects,
-  .research-band,
   .beyond-section,
   .notes-section {
     padding: 56px 0;
