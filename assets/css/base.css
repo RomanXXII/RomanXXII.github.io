@@ -4,11 +4,13 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
 }
 
 body {
+  overflow-x: hidden;
   margin: 0;
   font-family: var(--font-sans);
   background: var(--page-bg);
@@ -16,6 +18,13 @@ body {
   line-height: 1.6;
   font-feature-settings: "ss01" 1;
   transition: background 180ms ease, color 180ms ease;
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
 }
 
 body::before {
