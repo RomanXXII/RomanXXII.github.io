@@ -1,28 +1,22 @@
 const root = document.documentElement;
 const themeToggle = document.querySelector(".theme-toggle");
 const themeToggleText = document.querySelector(".theme-toggle-text");
+const themePreferenceQuery = window.matchMedia
+  ? window.matchMedia("(prefers-color-scheme: light)")
+  : null;
 
-function getStoredTheme() {
-  try {
-    return localStorage.getItem("theme");
-  } catch {
-    return null;
-  }
-}
-
-function storeTheme(theme) {
-  try {
-    localStorage.setItem("theme", theme);
-  } catch {
-    return;
-  }
+function getPreferredTheme() {
+  return themePreferenceQuery?.matches ? "light" : "dark";
 }
 
 function setTheme(theme) {
   const isLight = theme === "light";
 
   root.dataset.theme = isLight ? "light" : "dark";
-  storeTheme(root.dataset.theme);
+
+  if (!themeToggle) {
+    return;
+  }
 
   themeToggle.setAttribute("aria-pressed", String(isLight));
   themeToggle.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
@@ -33,9 +27,13 @@ function setTheme(theme) {
 }
 
 if (themeToggle) {
-  setTheme(getStoredTheme() === "light" ? "light" : "dark");
+  setTheme(getPreferredTheme());
 
   themeToggle.addEventListener("click", () => {
     setTheme(root.dataset.theme === "light" ? "dark" : "light");
   });
 }
+
+themePreferenceQuery?.addEventListener("change", () => {
+  setTheme(getPreferredTheme());
+});
