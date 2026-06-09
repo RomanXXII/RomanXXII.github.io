@@ -301,11 +301,13 @@ h3 {
 .story-block,
 .contact-panel a {
   animation: rise-in 560ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
 }
 
+/* Stagger common page-entry elements without repeating the animation definition. */
 .hero-copy > :nth-child(1),
 .page-hero > :nth-child(1) {
-  animation-delay: 80ms;
+  --reveal-delay: 80ms;
 }
 
 .hero-copy > :nth-child(2),
@@ -315,7 +317,7 @@ h3 {
 .stack-photo:nth-child(1),
 .story-block:nth-child(1),
 .contact-panel a:nth-child(1) {
-  animation-delay: 150ms;
+  --reveal-delay: 150ms;
 }
 
 .hero-copy > :nth-child(3),
@@ -325,7 +327,7 @@ h3 {
 .stack-photo:nth-child(2),
 .story-block:nth-child(2),
 .contact-panel a:nth-child(2) {
-  animation-delay: 220ms;
+  --reveal-delay: 220ms;
 }
 
 .hero-copy > :nth-child(4),
@@ -334,12 +336,12 @@ h3 {
 .stack-photo:nth-child(3),
 .story-block:nth-child(3),
 .contact-panel a:nth-child(3) {
-  animation-delay: 290ms;
+  --reveal-delay: 290ms;
 }
 
 .hero-visual,
 .stack-photo:nth-child(4),
 .contact-panel a:nth-child(n + 4) {
-  animation-delay: 360ms;
+  --reveal-delay: 360ms;
 }
 

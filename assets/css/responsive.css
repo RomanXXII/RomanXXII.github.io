@@ -155,6 +155,7 @@
     opacity: 1 !important;
     translate: 0 0 !important;
     transform: none !important;
+    --reveal-delay: 0ms !important;
   }
 
   *,
