@@ -142,7 +142,7 @@
 }
 
 .hero::before {
-  background: url("../images/hero/research-systems-hero.jpg") center / cover no-repeat;
+  background: url("../../images/hero/research-systems-hero.jpg") center / cover no-repeat;
   filter: blur(3px) saturate(1.08) contrast(1.04);
   opacity: 0.58;
   transform: translateX(-50%) scale(1.012);

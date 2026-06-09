@@ -11,14 +11,10 @@
 }
 
 .detail-card {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 26px;
-  background:
+  --surface-background:
     linear-gradient(145deg, rgba(114, 216, 232, 0.1), rgba(215, 181, 109, 0.065)),
     var(--surface-bg);
+  padding: 26px;
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.16);
 }
 
@@ -37,8 +33,6 @@
 
 .project-detail-card {
   padding: 0;
-  overflow: hidden;
-  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .project-detail-card:hover,
@@ -181,21 +175,11 @@
 }
 
 .media-preview {
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
-  border-radius: var(--radius);
-  background:
+  --surface-border: color-mix(in srgb, var(--accent) 24%, transparent);
+  --surface-background:
     linear-gradient(145deg, rgba(114, 216, 232, 0.06), rgba(215, 181, 109, 0.045)),
     var(--surface-bg-soft);
   color: var(--text);
-  text-decoration: none;
-  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
-}
-
-.media-preview:hover {
-  transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--accent) 36%, transparent);
-  background: var(--hover-bg);
 }
 
 .media-preview img {

@@ -1,7 +1,8 @@
 /* Main stylesheet entry point. Keep imports ordered from global foundations to page-level overrides. */
-@import url("./fonts.css");
-@import url("./tokens.css");
-@import url("./base.css");
-@import url("./shell.css");
-@import url("./sections.css");
-@import url("./responsive.css");
+@import url("./foundations/fonts.css");
+@import url("./foundations/tokens.css");
+@import url("./foundations/base.css");
+@import url("./components/surfaces.css");
+@import url("./layout/shell.css");
+@import url("./pages/sections.css");
+@import url("./layout/responsive.css");

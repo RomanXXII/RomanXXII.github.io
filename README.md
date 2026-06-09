@@ -22,21 +22,22 @@ The site is intentionally static HTML/CSS for now so it remains simple to deploy
 
 `assets/css/style.css` is the main stylesheet entry point. It imports smaller files by responsibility:
 
-- `fonts.css` - local IBM Plex `@font-face` declarations
-- `tokens.css` - color, theme, spacing, radius, shadow, and layout variables
-- `base.css` - global element defaults and page primitives
-- `shell.css` - header, navigation, hero, buttons, typography, and shared animation styles
-- `sections.css` - section-level import index
-- `home.css` - homepage About, selected projects, and Beyond pathways
-- `story.css` - Beyond page story layout and photo stack
-- `project-details.css` - project accordions, media previews, protocol panels, and project links
-- `contact.css` - contact page cards and footer contact layout
-- `responsive.css` - mobile breakpoints and reduced-motion support
+- `foundations/fonts.css` - local IBM Plex `@font-face` declarations
+- `foundations/tokens.css` - color, theme, spacing, radius, shadow, and layout variables
+- `foundations/base.css` - global element defaults and page primitives
+- `components/surfaces.css` - shared card and link-surface primitives
+- `layout/shell.css` - header, navigation, hero, buttons, typography, and shared animation styles
+- `pages/sections.css` - section-level import index
+- `pages/home.css` - homepage About, selected projects, and Beyond pathways
+- `pages/story.css` - Beyond page story layout and photo stack
+- `pages/project-details.css` - project accordions, media previews, protocol panels, and project links
+- `pages/contact.css` - contact page cards and footer contact layout
+- `layout/responsive.css` - mobile breakpoints and reduced-motion support
 
 ## Front-end and security notes
 
 - Shared `<head>` metadata, navigation, script tags, and active nav state are generated from `scripts/build-site.mjs`.
-- The theme follows the visitor's system color preference on page load. The toggle changes the current page view only and does not use `localStorage`.
+- The theme follows the visitor's system color preference on page load. The toggle changes the current page view only.
 - Fonts are self-hosted from `assets/fonts/` to avoid third-party font requests.
 - A meta Content Security Policy is included for GitHub Pages compatibility. It restricts scripts, styles, fonts, images, and connections to the same origin.
 

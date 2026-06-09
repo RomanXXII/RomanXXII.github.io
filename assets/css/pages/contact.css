@@ -28,24 +28,11 @@
 }
 
 .contact-panel a {
-  position: relative;
-  overflow: hidden;
   display: flex;
   min-height: 74px;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
   padding: 16px 18px;
-  background: var(--surface-bg);
-  text-decoration: none;
-  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
-}
-
-.contact-panel a:hover {
-  transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--accent) 36%, transparent);
-  background: var(--hover-bg);
 }
 
 .contact-panel .primary-contact {
