@@ -6,8 +6,10 @@ Personal portfolio site for Roman Beames, hosted with GitHub Pages.
 
 - `index.html` - homepage overview and About section
 - `pages/` - detail pages for expandable portfolio sections
-- `assets/css/` - global design tokens, layout, responsive styles, and components
-- `assets/js/` - theme toggle behavior
+- `scripts/build-site.mjs` - dependency-free build script that regenerates shared page chrome
+- `assets/css/` - modular CSS entry point, design tokens, page sections, responsive rules, and components
+- `assets/js/` - early theme initialization and theme toggle behavior
+- `assets/fonts/` - self-hosted IBM Plex font files
 - `assets/images/` - organized site images:
   - `hero/` - landing-page background and portrait imagery
   - `projects/` - grouped project screenshots and diagrams
@@ -15,6 +17,28 @@ Personal portfolio site for Roman Beames, hosted with GitHub Pages.
 - `assets/docs/` - downloadable documents such as the resume
 
 The site is intentionally static HTML/CSS for now so it remains simple to deploy and easy to migrate later.
+
+## CSS organization
+
+`assets/css/style.css` is the main stylesheet entry point. It imports smaller files by responsibility:
+
+- `fonts.css` - local IBM Plex `@font-face` declarations
+- `tokens.css` - color, theme, spacing, radius, shadow, and layout variables
+- `base.css` - global element defaults and page primitives
+- `shell.css` - header, navigation, hero, buttons, typography, and shared animation styles
+- `sections.css` - section-level import index
+- `home.css` - homepage About, selected projects, and Beyond pathways
+- `story.css` - Beyond page story layout and photo stack
+- `project-details.css` - project accordions, media previews, protocol panels, and project links
+- `contact.css` - contact page cards and footer contact layout
+- `responsive.css` - mobile breakpoints and reduced-motion support
+
+## Front-end and security notes
+
+- Shared `<head>` metadata, navigation, script tags, and active nav state are generated from `scripts/build-site.mjs`.
+- The theme follows the visitor's system color preference on page load. The toggle changes the current page view only and does not use `localStorage`.
+- Fonts are self-hosted from `assets/fonts/` to avoid third-party font requests.
+- A meta Content Security Policy is included for GitHub Pages compatibility. It restricts scripts, styles, fonts, images, and connections to the same origin.
 
 ## Local workflow
 

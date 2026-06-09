@@ -1,0 +1,82 @@
+/* Contact page panel and shared footer contact cards. */
+.contact-page-panel {
+  padding: 24px 0 80px;
+}
+
+.site-footer {
+  align-items: start;
+  grid-template-columns: minmax(260px, 0.68fr) minmax(0, 1fr);
+  gap: 64px;
+  padding: 72px 0;
+}
+
+.contact-copy h2 {
+  margin-bottom: 10px;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+}
+
+.contact-copy p:not(.section-kicker) {
+  max-width: 620px;
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.contact-panel a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  min-height: 74px;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  background: var(--surface-bg);
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.contact-panel a:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--accent) 36%, transparent);
+  background: var(--hover-bg);
+}
+
+.contact-panel .primary-contact {
+  grid-column: 1 / -1;
+  min-height: 96px;
+  background:
+    linear-gradient(135deg, rgba(114, 216, 232, 0.12), rgba(215, 181, 109, 0.08)),
+    var(--surface-bg);
+}
+
+.contact-panel .primary-contact:hover {
+  border-color: color-mix(in srgb, var(--warm) 38%, transparent);
+}
+
+.contact-panel span {
+  color: var(--subtle);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.contact-panel strong {
+  overflow-wrap: anywhere;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.primary-contact strong {
+  color: var(--accent-strong);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+}
+
