@@ -1,0 +1,48 @@
+/* Shared card and link surface primitives. */
+.project-card,
+.detail-card,
+.beyond-card,
+.media-preview,
+.contact-panel a {
+  border: 1px solid var(--surface-border, var(--line));
+  border-radius: var(--radius);
+  background: var(--surface-background, var(--surface-bg));
+}
+
+.project-card,
+.detail-card,
+.media-preview,
+.contact-panel a {
+  overflow: hidden;
+}
+
+.project-card,
+.detail-card,
+.contact-panel a {
+  position: relative;
+}
+
+.beyond-card,
+.media-preview,
+.contact-panel a {
+  text-decoration: none;
+}
+
+.project-card,
+.project-detail-card,
+.beyond-card,
+.media-preview,
+.contact-panel a {
+  transition: transform var(--surface-duration, 160ms) ease,
+    border-color var(--surface-duration, 160ms) ease,
+    background var(--surface-duration, 160ms) ease,
+    box-shadow var(--surface-duration, 160ms) ease;
+}
+
+.beyond-card:hover,
+.media-preview:hover,
+.contact-panel a:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--accent) 36%, transparent);
+  background: var(--hover-bg);
+}

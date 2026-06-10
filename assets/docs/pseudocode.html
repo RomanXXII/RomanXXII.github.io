@@ -1,5 +1,93 @@
-<h3>Protocol Overview</h3>
-<pre><code>START SECURE CHAT SESSION
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Protocol pseudocode for Roman Beames's secure peer-to-peer messaging project."
+  />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"
+  />
+  <title>Protocol Pseudocode | Roman Beames</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b10;
+      --panel: #111821;
+      --text: #eef4f8;
+      --muted: #a7b4c2;
+      --line: rgba(176, 195, 215, 0.16);
+      --accent: #72d8e8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0 0 24px;
+      color: var(--muted);
+    }
+
+    pre {
+      overflow: auto;
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      background: var(--panel);
+    }
+
+    code {
+      color: var(--text);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      white-space: pre;
+    }
+
+    .kicker {
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="kicker">Secure Peer-to-Peer Messaging Tool</p>
+    <h1>Protocol Pseudocode</h1>
+    
+    <pre><code>START SECURE CHAT SESSION
 
 Peer A and Peer B each generate:
   encryption_private_key
@@ -90,3 +178,6 @@ Each message is encrypted before socket transmission.
 Fresh nonces prevent identical messages from producing identical ciphertext.
 Signed public keys help prevent unauthorized key substitution.
 Plaintext and ciphertext are displayed separately to demonstrate encryption behavior.</code></pre>
+  </main>
+</body>
+</html>

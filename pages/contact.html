@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Contact Roman Beames for research, graduate, and engineering conversations in AI security and cybersecurity engineering." />
+  <meta
+    name="description"
+    content="Contact Roman Beames for research, graduate, and engineering conversations in AI security and cybersecurity engineering."
+  />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests"
+  />
   <title>Contact | Roman Beames</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script>
-    try {
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme === "light") {
-        document.documentElement.dataset.theme = "light";
-      }
-    } catch {
-      document.documentElement.dataset.theme = "dark";
-    }
-  </script>
+  <script src="../assets/js/theme-init.js"></script>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <script src="../assets/js/script.js" defer></script>
 </head>
-
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
@@ -51,13 +44,19 @@
 
     <section class="section-wrap contact-page-panel">
       <div class="contact-panel" aria-label="Contact links">
-        <a class="primary-contact" href="mailto:adb0138@auburn.edu" target="_blank" rel="noopener noreferrer">
+        <a class="primary-contact email-reveal-link" href="#" data-email-key="primary">
           <span>Best way to reach me</span>
-          <strong>adb0138@auburn.edu</strong>
+          <strong>
+            <span class="email-reveal-text">Click to reveal</span>
+            <span class="email-copy-control" role="button" tabindex="0" aria-label="Copy best way to reach me email">Copy</span>
+          </strong>
         </a>
-        <a href="mailto:romanbeames@gmail.com" target="_blank" rel="noopener noreferrer">
+        <a class="email-reveal-link" href="#" data-email-key="personal">
           <span>Personal</span>
-          <strong>romanbeames@gmail.com</strong>
+          <strong>
+            <span class="email-reveal-text">Click to reveal</span>
+            <span class="email-copy-control" role="button" tabindex="0" aria-label="Copy personal email">Copy</span>
+          </strong>
         </a>
         <a href="https://www.linkedin.com/in/romanbeames" target="_blank" rel="noopener noreferrer">
           <span>LinkedIn</span>
@@ -75,5 +74,4 @@
     </section>
   </main>
 </body>
-
 </html>
