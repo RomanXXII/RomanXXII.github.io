@@ -63,6 +63,10 @@ themePreferenceQuery?.addEventListener("change", () => {
 });
 
 const emailRevealLinks = document.querySelectorAll(".email-reveal-link");
+const emailParts = {
+  primary: ["8310bda", "ude.nrubua"],
+  personal: ["semaebnamor", "moc.liamg"],
+};
 
 function reverseText(value) {
   return value.split("").reverse().join("");
@@ -71,8 +75,9 @@ function reverseText(value) {
 emailRevealLinks.forEach((link) => {
   const emailText = link.querySelector(".email-reveal-text");
   const copyControl = link.querySelector(".email-copy-control");
-  const user = reverseText(link.dataset.emailUser || "");
-  const domain = reverseText(link.dataset.emailDomain || "");
+  const [encodedUser = "", encodedDomain = ""] = emailParts[link.dataset.emailKey] || [];
+  const user = reverseText(encodedUser);
+  const domain = reverseText(encodedDomain);
   const email = user && domain ? `${user}@${domain}` : "";
 
   if (!emailText || !email) {
