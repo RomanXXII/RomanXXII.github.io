@@ -136,7 +136,8 @@
   list-style: none;
 }
 
-.tag-list li {
+.tag-list li,
+.tag-list > span {
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 7px 10px;

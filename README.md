@@ -37,7 +37,7 @@ The site is intentionally static HTML/CSS for now so it remains simple to deploy
 ## Front-end and security notes
 
 - Shared `<head>` metadata, navigation, script tags, and active nav state are generated from `scripts/build-site.mjs`.
-- The theme follows the visitor's system color preference on page load. The toggle changes the current page view only.
+- The theme follows the visitor's system color preference by default and persists manual theme choices across pages.
 - Fonts are self-hosted from `assets/fonts/` to avoid third-party font requests.
 - A meta Content Security Policy is included for GitHub Pages compatibility. It restricts scripts, styles, fonts, images, and connections to the same origin.
 

@@ -4,15 +4,37 @@ const themeToggleText = document.querySelector(".theme-toggle-text");
 const themePreferenceQuery = window.matchMedia
   ? window.matchMedia("(prefers-color-scheme: light)")
   : null;
+const themeStorageKey = "preferred-theme";
 
-function getPreferredTheme() {
-  return themePreferenceQuery?.matches ? "light" : "dark";
+function getStoredTheme() {
+  try {
+    const theme = window.localStorage.getItem(themeStorageKey);
+    return theme === "light" || theme === "dark" ? theme : null;
+  } catch {
+    return null;
+  }
 }
 
-function setTheme(theme) {
+function storeTheme(theme) {
+  try {
+    window.localStorage.setItem(themeStorageKey, theme);
+  } catch {
+    /* Ignore storage failures so the toggle still works for the current page. */
+  }
+}
+
+function getPreferredTheme() {
+  return getStoredTheme() || (themePreferenceQuery?.matches ? "light" : "dark");
+}
+
+function setTheme(theme, { persist = false } = {}) {
   const isLight = theme === "light";
 
   root.dataset.theme = isLight ? "light" : "dark";
+
+  if (persist) {
+    storeTheme(root.dataset.theme);
+  }
 
   if (!themeToggle) {
     return;
@@ -30,10 +52,12 @@ if (themeToggle) {
   setTheme(getPreferredTheme());
 
   themeToggle.addEventListener("click", () => {
-    setTheme(root.dataset.theme === "light" ? "dark" : "light");
+    setTheme(root.dataset.theme === "light" ? "dark" : "light", { persist: true });
   });
 }
 
 themePreferenceQuery?.addEventListener("change", () => {
-  setTheme(getPreferredTheme());
+  if (!getStoredTheme()) {
+    setTheme(getPreferredTheme());
+  }
 });

@@ -87,7 +87,8 @@
   margin-top: 18px;
 }
 
-.project-summary-tags li {
+.project-summary-tags li,
+.project-summary-tags > span {
   border: 1px solid color-mix(in srgb, var(--warm) 38%, transparent);
   border-radius: 999px;
   background: color-mix(in srgb, var(--warm) 11%, transparent);
