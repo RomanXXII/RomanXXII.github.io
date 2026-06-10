@@ -47,7 +47,7 @@
   border-color: color-mix(in srgb, var(--warm) 38%, transparent);
 }
 
-.contact-panel span {
+.contact-panel > a > span {
   color: var(--subtle);
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -56,6 +56,11 @@
 }
 
 .contact-panel strong {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 8px;
   overflow-wrap: anywhere;
   color: var(--text);
   font-size: 1rem;
@@ -67,3 +72,47 @@
   font-size: clamp(1.25rem, 2vw, 1.55rem);
 }
 
+.contact-panel .email-reveal-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: inherit;
+  font: inherit;
+  text-transform: none;
+}
+
+.contact-panel .email-copy-control {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 10px;
+  background: var(--tag-bg);
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: none;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.contact-panel .email-copy-control:hover,
+.contact-panel .email-copy-control:focus-visible {
+  border-color: color-mix(in srgb, var(--warm) 38%, transparent);
+  background: color-mix(in srgb, var(--warm) 11%, transparent);
+  color: var(--warm);
+}
+
+.contact-panel .email-copy-control:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.contact-panel .email-copy-control.is-copied {
+  border-color: color-mix(in srgb, var(--warm) 38%, transparent);
+  background: color-mix(in srgb, var(--warm) 11%, transparent);
+  color: var(--warm);
+}
