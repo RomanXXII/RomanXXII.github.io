@@ -38,11 +38,18 @@
 .contact-panel .primary-contact {
   grid-column: 1 / -1;
   min-height: 96px;
-  background: var(--card-bg), var(--surface-bg);
+  border-color: var(--inverse-bg);
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
 }
 
 .contact-panel .primary-contact:hover {
-  border-color: var(--line-strong);
+  border-color: var(--inverse-bg);
+  background: var(--inverse-bg);
+}
+
+.contact-panel .primary-contact::before {
+  display: none;
 }
 
 .contact-panel > a > span {
@@ -66,8 +73,26 @@
 }
 
 .primary-contact strong {
-  color: var(--accent-strong);
+  color: var(--inverse-text);
   font-size: clamp(1.25rem, 2vw, 1.55rem);
+}
+
+.contact-panel .primary-contact > span {
+  color: var(--inverse-muted);
+}
+
+.contact-panel .primary-contact .email-copy-control {
+  border-color: var(--inverse-border);
+  background: transparent;
+  color: var(--inverse-muted);
+}
+
+.contact-panel .primary-contact .email-copy-control:hover,
+.contact-panel .primary-contact .email-copy-control:focus-visible,
+.contact-panel .primary-contact .email-copy-control.is-copied {
+  border-color: var(--inverse-text);
+  background: var(--inverse-text);
+  color: var(--inverse-bg);
 }
 
 .contact-panel .email-reveal-text {

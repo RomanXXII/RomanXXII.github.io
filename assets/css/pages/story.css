@@ -100,3 +100,15 @@
 .story-return {
   padding-top: 8px;
 }
+
+.story-return .button {
+  border-color: var(--inverse-bg);
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
+}
+
+.story-return .button:hover {
+  border-color: var(--inverse-bg);
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
+}

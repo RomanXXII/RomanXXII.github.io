@@ -86,10 +86,10 @@
 
 .project-summary-tags li,
 .project-summary-tags > span {
-  border: 1px solid var(--line);
+  border: 1px solid var(--inverse-bg);
   border-radius: var(--radius);
-  background: var(--tag-bg);
-  color: var(--warm);
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
   font-size: 0.8rem;
   font-weight: 700;
   padding: 7px 10px;

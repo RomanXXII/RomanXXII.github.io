@@ -127,6 +127,20 @@
   margin-top: 24px;
 }
 
+.section-action .button,
+.beyond-pathways > .button {
+  border-color: var(--inverse-bg);
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
+}
+
+.section-action .button:hover,
+.beyond-pathways > .button:hover {
+  border-color: var(--inverse-bg);
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -138,11 +152,11 @@
 
 .tag-list li,
 .tag-list > span {
-  border: 1px solid var(--line);
+  border: 1px solid var(--inverse-bg);
   border-radius: var(--radius);
   padding: 7px 11px;
-  background: var(--tag-bg);
-  color: var(--muted);
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
   font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 600;
