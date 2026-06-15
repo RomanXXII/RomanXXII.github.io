@@ -2,8 +2,8 @@
 .detail-grid,
 .detail-list {
   display: grid;
-  gap: 14px;
-  padding: 18px 0 64px;
+  gap: 12px;
+  padding: 18px 0 72px;
 }
 
 .detail-grid {
@@ -11,11 +11,9 @@
 }
 
 .detail-card {
-  --surface-background:
-    linear-gradient(145deg, rgba(114, 216, 232, 0.1), rgba(215, 181, 109, 0.065)),
-    var(--surface-bg);
+  --surface-background: var(--card-bg), var(--surface-bg);
   padding: 26px;
-  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.18);
 }
 
 .detail-card h2 {
@@ -32,15 +30,14 @@
 }
 
 .project-detail-card {
+  --surface-border: transparent;
   padding: 0;
 }
 
 .project-detail-card:hover,
 .project-detail-card[open] {
-  border-color: color-mix(in srgb, var(--accent) 44%, transparent);
-  background:
-    linear-gradient(145deg, rgba(114, 216, 232, 0.15), rgba(215, 181, 109, 0.1)),
-    var(--surface-bg);
+  border-color: transparent;
+  background: var(--card-bg-hover), var(--surface-bg);
   box-shadow: 0 22px 66px rgba(0, 0, 0, 0.22);
 }
 
@@ -50,7 +47,7 @@
   gap: 0;
   min-height: 0;
   align-content: start;
-  padding: 28px 32px 30px;
+  padding: 30px 34px 32px;
   cursor: pointer;
   list-style: none;
 }
@@ -89,18 +86,18 @@
 
 .project-summary-tags li,
 .project-summary-tags > span {
-  border: 1px solid color-mix(in srgb, var(--warm) 38%, transparent);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--warm) 11%, transparent);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--tag-bg);
   color: var(--warm);
-  font-size: 0.86rem;
+  font-size: 0.8rem;
   font-weight: 700;
   padding: 7px 10px;
 }
 
 .project-card-body {
   padding: 0 32px 32px;
-  border-top: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  border-top: 1px solid var(--line);
 }
 
 .project-card-body p {
@@ -119,13 +116,13 @@
   align-items: center;
   justify-content: center;
   margin-top: 22px;
-  border: 1px solid color-mix(in srgb, var(--accent) 36%, transparent);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 9px 14px;
-  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  padding: 9px 15px;
+  background: var(--surface-bg-soft);
   color: var(--accent-strong);
   font-family: var(--font-mono);
-  font-size: 0.92rem;
+  font-size: 0.84rem;
   font-weight: 800;
   transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
 }
@@ -137,14 +134,14 @@
 .expand-control::after {
   content: "+";
   margin-left: 10px;
-  color: var(--warm);
+  color: var(--muted);
   font-size: 1rem;
 }
 
 .project-detail-card[open] .expand-control {
-  border-color: rgba(215, 181, 109, 0.42);
-  background: rgba(215, 181, 109, 0.09);
-  color: var(--warm);
+  border-color: var(--line-strong);
+  background: var(--text);
+  color: var(--primary-text);
 }
 
 .project-detail-card[open] .expand-control::before {
@@ -176,10 +173,8 @@
 }
 
 .media-preview {
-  --surface-border: color-mix(in srgb, var(--accent) 24%, transparent);
-  --surface-background:
-    linear-gradient(145deg, rgba(114, 216, 232, 0.06), rgba(215, 181, 109, 0.045)),
-    var(--surface-bg-soft);
+  --surface-border: var(--line);
+  --surface-background: var(--surface-bg-soft);
   color: var(--text);
 }
 
@@ -221,11 +216,9 @@
 
 .protocol-panel {
   margin-top: 22px;
-  border: 1px solid rgba(215, 181, 109, 0.26);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background:
-    linear-gradient(145deg, rgba(215, 181, 109, 0.075), rgba(114, 216, 232, 0.045)),
-    rgba(0, 0, 0, 0.16);
+  background: rgba(0, 0, 0, 0.16);
 }
 
 .protocol-panel-header {
@@ -235,7 +228,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
-  border-bottom: 1px solid rgba(215, 181, 109, 0.22);
+  border-bottom: 1px solid var(--line);
 }
 
 .protocol-panel-header h3 {
@@ -244,7 +237,7 @@
 }
 
 .protocol-panel-header a {
-  color: var(--accent);
+  color: var(--text);
   font-family: var(--font-mono);
   font-size: 0.84rem;
   font-weight: 800;
@@ -252,7 +245,7 @@
 }
 
 .protocol-panel-header a:hover {
-  color: var(--accent-strong);
+  color: var(--muted);
 }
 
 .protocol-panel pre {
@@ -269,4 +262,3 @@
   line-height: 1.55;
   white-space: pre;
 }
-

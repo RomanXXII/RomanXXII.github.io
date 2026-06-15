@@ -4,7 +4,7 @@
 }
 
 .page-hero {
-  padding: 64px 0 28px;
+  padding: 72px 0 30px;
 }
 
 .page-hero h1 {
@@ -15,8 +15,8 @@
 
 .story-layout {
   display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
-  gap: 56px;
+  grid-template-columns: minmax(260px, 0.68fr) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 76px);
   align-items: start;
   padding: 32px 0 80px;
 }
@@ -25,7 +25,7 @@
   position: sticky;
   top: 96px;
   display: grid;
-  gap: 20px;
+  gap: 16px;
   margin: 0;
 }
 
@@ -44,9 +44,7 @@
   aspect-ratio: 4 / 3;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background:
-    linear-gradient(145deg, rgba(114, 216, 232, 0.14), rgba(215, 181, 109, 0.12)),
-    var(--surface-bg);
+  background: var(--surface-bg);
   box-shadow: var(--shadow);
   object-fit: cover;
 }
@@ -69,18 +67,19 @@
 .stack-photo figcaption {
   margin-top: 8px;
   color: var(--subtle);
+  font-family: var(--font-mono);
   font-size: 0.86rem;
   font-weight: 700;
 }
 
 .story-content {
   display: grid;
-  gap: 24px;
+  gap: 30px;
 }
 
 .story-block {
   border-top: 1px solid var(--line);
-  padding-top: 28px;
+  padding-top: 30px;
 }
 
 .story-block:first-child {
@@ -101,4 +100,3 @@
 .story-return {
   padding-top: 8px;
 }
-

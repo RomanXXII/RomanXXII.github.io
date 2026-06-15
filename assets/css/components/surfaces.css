@@ -43,6 +43,6 @@
 .media-preview:hover,
 .contact-panel a:hover {
   transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--accent) 36%, transparent);
+  border-color: var(--line-strong);
   background: var(--hover-bg);
 }

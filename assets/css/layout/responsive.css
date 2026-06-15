@@ -26,7 +26,7 @@
   }
 
   .hero-visual img {
-    min-height: 300px;
+    min-height: 340px;
   }
 
   .project-grid,
@@ -89,14 +89,14 @@
   }
 
   .site-nav a {
-    padding: 8px 10px;
+    padding: 8px 11px;
   }
 
   .hero,
   .about-section,
   #projects,
   .beyond-section {
-    padding: 56px 0;
+    padding: 64px 0;
   }
 
   .page-hero {
@@ -109,6 +109,10 @@
 
   .hero-actions .button {
     width: 100%;
+  }
+
+  .hero-visual img {
+    min-height: 300px;
   }
 
   .project-detail-card summary {
