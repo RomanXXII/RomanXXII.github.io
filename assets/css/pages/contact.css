@@ -6,7 +6,7 @@
 .site-footer {
   align-items: start;
   grid-template-columns: minmax(260px, 0.68fr) minmax(0, 1fr);
-  gap: 64px;
+  gap: clamp(36px, 6vw, 72px);
   padding: 72px 0;
 }
 
@@ -24,7 +24,7 @@
 .contact-panel {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
 }
 
 .contact-panel a {
@@ -32,19 +32,24 @@
   min-height: 74px;
   flex-direction: column;
   justify-content: center;
-  padding: 16px 18px;
+  padding: 17px 18px;
 }
 
 .contact-panel .primary-contact {
   grid-column: 1 / -1;
   min-height: 96px;
-  background:
-    linear-gradient(135deg, rgba(114, 216, 232, 0.12), rgba(215, 181, 109, 0.08)),
-    var(--surface-bg);
+  border-color: var(--inverse-bg);
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
 }
 
 .contact-panel .primary-contact:hover {
-  border-color: color-mix(in srgb, var(--warm) 38%, transparent);
+  border-color: var(--inverse-bg);
+  background: var(--inverse-bg);
+}
+
+.contact-panel .primary-contact::before {
+  display: none;
 }
 
 .contact-panel > a > span {
@@ -68,8 +73,26 @@
 }
 
 .primary-contact strong {
-  color: var(--accent-strong);
+  color: var(--inverse-text);
   font-size: clamp(1.25rem, 2vw, 1.55rem);
+}
+
+.contact-panel .primary-contact > span {
+  color: var(--inverse-muted);
+}
+
+.contact-panel .primary-contact .email-copy-control {
+  border-color: var(--inverse-border);
+  background: transparent;
+  color: var(--inverse-muted);
+}
+
+.contact-panel .primary-contact .email-copy-control:hover,
+.contact-panel .primary-contact .email-copy-control:focus-visible,
+.contact-panel .primary-contact .email-copy-control.is-copied {
+  border-color: var(--inverse-text);
+  background: var(--inverse-text);
+  color: var(--inverse-bg);
 }
 
 .contact-panel .email-reveal-text {
@@ -86,7 +109,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius);
   padding: 7px 10px;
   background: var(--tag-bg);
   color: var(--muted);
@@ -101,9 +124,9 @@
 
 .contact-panel .email-copy-control:hover,
 .contact-panel .email-copy-control:focus-visible {
-  border-color: color-mix(in srgb, var(--warm) 38%, transparent);
-  background: color-mix(in srgb, var(--warm) 11%, transparent);
-  color: var(--warm);
+  border-color: var(--line-strong);
+  background: var(--text);
+  color: var(--primary-text);
 }
 
 .contact-panel .email-copy-control:focus-visible {
@@ -112,7 +135,7 @@
 }
 
 .contact-panel .email-copy-control.is-copied {
-  border-color: color-mix(in srgb, var(--warm) 38%, transparent);
-  background: color-mix(in srgb, var(--warm) 11%, transparent);
-  color: var(--warm);
+  border-color: var(--line-strong);
+  background: var(--text);
+  color: var(--primary-text);
 }

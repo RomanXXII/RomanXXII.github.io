@@ -22,11 +22,11 @@
 
   .hero {
     min-height: auto;
-    padding-top: 56px;
+    padding: 48px 0 20px;
   }
 
   .hero-visual img {
-    min-height: 300px;
+    height: clamp(340px, 64vw, 460px);
   }
 
   .project-grid,
@@ -89,14 +89,22 @@
   }
 
   .site-nav a {
-    padding: 8px 10px;
+    padding: 8px 11px;
   }
 
   .hero,
   .about-section,
   #projects,
   .beyond-section {
-    padding: 56px 0;
+    padding: 64px 0;
+  }
+
+  .hero {
+    padding: 48px 0 18px;
+  }
+
+  .about-section {
+    padding: 18px 0 64px;
   }
 
   .page-hero {
@@ -109,6 +117,10 @@
 
   .hero-actions .button {
     width: 100%;
+  }
+
+  .hero-visual img {
+    height: 380px;
   }
 
   .project-detail-card summary {
