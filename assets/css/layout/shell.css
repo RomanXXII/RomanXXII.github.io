@@ -124,8 +124,7 @@
   grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.66fr);
   gap: clamp(32px, 5vw, 72px);
   align-items: center;
-  min-height: calc(100svh - 70px);
-  padding: 64px 0 76px;
+  padding: 56px 0 24px;
 }
 
 .hero::before {
@@ -172,7 +171,7 @@ p {
 
 h1 {
   max-width: 860px;
-  margin-bottom: 18px;
+  margin-bottom: 28px;
   font-size: clamp(3.6rem, 10.5vw, 8.8rem);
   font-weight: 800;
   line-height: 0.88;
@@ -269,7 +268,7 @@ h3 {
 
 .hero-visual img {
   width: 100%;
-  min-height: 500px;
+  height: clamp(440px, 48vw, 560px);
   object-fit: cover;
 }
 

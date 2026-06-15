@@ -22,11 +22,11 @@
 
   .hero {
     min-height: auto;
-    padding-top: 56px;
+    padding: 48px 0 20px;
   }
 
   .hero-visual img {
-    min-height: 340px;
+    height: clamp(340px, 64vw, 460px);
   }
 
   .project-grid,
@@ -99,6 +99,14 @@
     padding: 64px 0;
   }
 
+  .hero {
+    padding: 48px 0 18px;
+  }
+
+  .about-section {
+    padding: 18px 0 64px;
+  }
+
   .page-hero {
     padding: 56px 0 24px;
   }
@@ -112,7 +120,7 @@
   }
 
   .hero-visual img {
-    min-height: 300px;
+    height: 380px;
   }
 
   .project-detail-card summary {
