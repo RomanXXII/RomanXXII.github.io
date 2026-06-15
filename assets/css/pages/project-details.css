@@ -102,7 +102,7 @@
 
 .project-card-body p {
   color: var(--text);
-  max-width: 900px;
+  max-width: 1080px;
 }
 
 .project-card-body p:first-child {
