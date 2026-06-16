@@ -140,11 +140,12 @@
 }
 
 .hero::before {
-  background:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: calc(100% / 6) 100%, 100% calc(100% / 4);
-  opacity: 0.32;
+  background-image: url("../../images/patterns/topography.svg");
+  background-size: 620px 620px;
+  background-position: calc(100% - 60px) -110px;
+  filter: var(--topography-filter);
+  mask-image: linear-gradient(90deg, transparent 0 32%, rgba(0, 0, 0, 0.78) 62%, transparent 100%);
+  opacity: var(--topography-hero-opacity);
 }
 
 .hero-copy {
