@@ -14,7 +14,7 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   background: var(--page-bg);
-  background-size: 80px 100%, auto;
+  background-size: auto;
   color: var(--text);
   line-height: 1.6;
   font-feature-settings: "ss01" 1;
@@ -33,11 +33,12 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: linear-gradient(to bottom, var(--grid-mask), transparent 70%);
+  background-image: url("../../images/patterns/topography.svg");
+  background-size: 620px 620px;
+  background-position: 50% -90px;
+  filter: var(--topography-filter);
+  mask-image: linear-gradient(to bottom, var(--contour-mask), transparent 72%);
+  opacity: var(--topography-opacity);
 }
 
 a {
