@@ -46,6 +46,109 @@
     <section class="section-wrap detail-list">
       <details class="detail-card project-detail-card">
         <summary>
+          <span class="section-kicker">Blue Team + SIEM Investigation</span>
+          <span class="project-summary-heading">SOC Homelab Investigations</span>
+          <span class="project-summary-copy">
+            Built a cybersecurity homelab to simulate attacker behavior from Kali Linux against a
+            Windows endpoint, forward Sysmon and Security event telemetry into Splunk Enterprise,
+            and document investigations mapped to MITRE ATT&CK techniques.
+          </span>
+          <span class="tag-list project-summary-tags" aria-label="Project focus areas">
+            <span>Splunk Enterprise</span>
+            <span>Sysmon Telemetry</span>
+            <span>MITRE ATT&CK</span>
+            <span>Incident Investigation</span>
+          </span>
+          <span class="expand-control" aria-hidden="true"></span>
+        </summary>
+        <div class="project-card-body">
+          <p>
+            This lab used a Kali Linux attacker VM, a Windows endpoint, Sysmon, Splunk Universal Forwarder, and Splunk
+            Enterprise to practice blue-team investigation workflows in an isolated environment. Before investigations
+            could begin, I validated Sysmon collection, Splunk forwarding, Windows event subscriptions, and endpoint
+            connectivity to ensure telemetry was reliably reaching the SIEM. Full writeups and analysis can be found in
+            the source repo.
+          </p>
+
+          <h3>T1105 - Ingress Tool Transfer</h3>
+          <p>
+            I simulated a PowerShell-based file transfer from a Kali attacker host and investigated the resulting
+            telemetry in Splunk. Starting with a Sysmon network connection event (Event ID 3), I pivoted to process
+            creation events (Event ID 1), identified the responsible PowerShell process, reconstructed the full command
+            line, and used endpoint artifacts to confirm the transfer. The investigation mapped the observed behavior
+            to MITRE ATT&CK T1105 (Ingress Tool Transfer).
+          </p>
+          <p>
+            This investigation demonstrated that endpoint activity is often distributed across multiple telemetry
+            sources. Starting from a Sysmon network connection event, I used timestamps, process identifiers, and
+            command-line metadata to correlate network activity with the originating PowerShell process and reconstruct
+            the full file transfer. Even without a corresponding file creation event, the combined evidence was
+            sufficient to determine what occurred.
+          </p>
+
+          <div class="project-media-grid" aria-label="T1105 ingress tool transfer investigation screenshots">
+            <a href="../assets/images/projects/soc-homelab/t1105/02-powershell-process-search.png" target="_blank"
+              rel="noopener noreferrer" class="media-preview media-preview-wide">
+              <img src="../assets/images/projects/soc-homelab/t1105/02-powershell-process-search.png"
+                alt="Splunk search results used to isolate the suspicious PowerShell process" width="1397"
+                height="864" loading="lazy" decoding="async" />
+              <span>Splunk Event 1 log search revealing suspicious PowerShell request</span>
+            </a>
+            <a href="../assets/images/projects/soc-homelab/t1105/03-powershell-download-event.png" target="_blank"
+              rel="noopener noreferrer" class="media-preview">
+              <img src="../assets/images/projects/soc-homelab/t1105/03-powershell-download-event.png"
+                alt="Splunk event showing a PowerShell Invoke-WebRequest command used for file download" width="1402"
+                height="878" loading="lazy" decoding="async" />
+              <span>Full Event 1 log showing PowerShell command and attacker host</span>
+            </a>
+          </div>
+
+          <h3>T1110 - Failed Authentication</h3>
+          <p>
+            I generated both local and remote authentication failures and analyzed Windows Security Event ID 4625
+            records in Splunk. By examining logon type, source workstation, authentication package, and status codes, I
+            distinguished local interactive login failures from remote NTLM authentication attempts originating from a
+            Kali attacker host and identified the specific cause of each failure.
+          </p>
+          <p>
+            This investigation demonstrated that identical event IDs can represent fundamentally different behaviors.
+            Comparing local and remote Event ID 4625 records showed how logon type, source metadata, and authentication
+            details are essential for distinguishing benign user activity from potentially suspicious network-based
+            authentication attempts.
+          </p>
+
+          <div class="project-media-grid" aria-label="T1110 failed authentication investigation screenshots">
+            <a href="../assets/images/projects/soc-homelab/t1110/04-remote-logon-events.png" target="_blank"
+              rel="noopener noreferrer" class="media-preview media-preview-wide">
+              <img src="../assets/images/projects/soc-homelab/t1110/04-remote-logon-events.png"
+                alt="Splunk search results showing remote authentication-related events" width="1438" height="692"
+                loading="lazy" decoding="async" />
+              <span>Splunk remote authentication events</span>
+            </a>
+            <a href="../assets/images/projects/soc-homelab/t1110/05-remote-failed-logon-details.png" target="_blank"
+              rel="noopener noreferrer" class="media-preview">
+              <img src="../assets/images/projects/soc-homelab/t1110/05-remote-failed-logon-details.png"
+                alt="Windows failed logon details showing logon type, target account, and remote source metadata"
+                width="610" height="610" loading="lazy" decoding="async" />
+              <span>Failed logon event details</span>
+            </a>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/RomanXXII/soc-splunk-lab" target="_blank" rel="noopener noreferrer"
+              class="button secondary">
+              View Repository
+            </a>
+            <span class="project-note">
+              All activity was performed in an isolated lab environment using owned virtual machines,
+              with screenshots and identifiers sanitized before publication.
+            </span>
+          </div>
+        </div>
+      </details>
+
+      <details class="detail-card project-detail-card">
+        <summary>
           <span class="section-kicker">AI + Binary Analysis</span>
           <span class="project-summary-heading">LLM-Based Binary Similarity Research</span>
           <span class="project-summary-copy">
@@ -399,7 +502,8 @@ Signed public keys help prevent unauthorized key substitution.</code></pre>
         <div class="project-card-body">
           <p>
             This site serves as both a portfolio, a small front-end engineering project, and an experiment in
-            AI-assisted development. It was built using Codex with static HTML, CSS, and JavaScript, with a focus on clear information hierarchy,
+            AI-assisted development. It was built using Codex with static HTML, CSS, and JavaScript, with a focus on
+            clear information hierarchy,
             fast loading, accessible navigation, and a visual style that fits technical research work
             without feeling like a generic template.
           </p>
